@@ -1,0 +1,152 @@
+body{
+    font-family: Verdana;
+    font-size: 1.5em;
+}
+a{
+    color: unset;
+}
+.navbar-brand{
+    margin: 0;
+    padding: 0; 
+    overflow: hidden;
+}
+.navbar{
+    border-bottom: 1px solid silver;
+}
+
+.crna-lista li a{
+    color:black;
+}
+.crna-lista li ul li {
+    list-style:disc ;
+}
+.jumbotron cite{
+    font-size: 1.4em;   
+}
+/* slajder */
+.carousel-caption{
+    color:black;
+    font-size: 1.7em;
+    background-color:rgba(211, 208, 215, 0.8);  /* alfa (providnost) */
+    border-radius: 15px;
+    padding-top: 15px;
+    
+}
+/* footer */
+#glavni-footer{
+    height: 100px;
+    padding: 10px 0 0 0;
+    margin: 30px 0 0 0;
+    border-top:1px solid silver;
+    background-color: #f8f8f8;
+}
+
+/* ikonice */
+.fa-heart{
+    color: red;
+    cursor: pointer;
+}
+.fa-heart:hover{
+    color: rgb(179, 0, 0);
+}
+.fa-shopping-cart{
+    color:goldenrod;
+    cursor: pointer;
+}
+.fa-shopping-cart:hover{
+    color: gold;
+}
+.fa-male{
+    color: deepskyblue;
+    cursor: pointer;
+}
+.fa-male:hover{
+    color :aqua;
+}
+.fa-female{
+    color: violet;
+    cursor: pointer;
+}
+.fa-female:hover{
+    color:magenta
+}
+.fa-trash-alt{
+    cursor: pointer;
+    color: dimgrey;
+}
+.fa-trash-alt:hover{
+    color: black;
+}
+.fa-facebook-square,.fa-instagram,.fa-twitter-square{
+    color:black;
+}
+
+/* korpa i lista zelja */
+ .slicica{
+    float: left;
+    padding-left: 2em;
+    height:180px;
+    min-width: auto;
+}
+.u-listi{
+    border-bottom: 1px solid silver;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.u-listi small{
+    margin-left: 10px;
+}
+.u-listi a{
+    color: red;
+    cursor: pointer;
+}
+.u-listi p:last-child{
+    border-left: 1px solid silver;
+}
+.separator{
+    min-height: 50px;
+}
+.ukupno{
+    color: crimson;
+}
+/* forme */
+form{
+    padding: 2em 3em 1em;
+    max-width: 850px;
+}
+.input-group-addon{
+    padding: 60px;
+}
+
+
+/* faq*/
+.panel-title{
+    font-weight: bold;
+}
+/* knjiga */
+
+.knjiga{
+    margin-top: 80px;
+}
+.naslov-knjige{
+    color: crimson;
+    margin-top: 0;
+}
+.oknjizi{
+    border-top: 1px solid #e7e7e7;
+    margin-top: 30px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+.cena{
+    border: 1px solid #e7e7e7;
+    height:150px;
+    width: 250px;
+}
+/* bagovi */
+.thumbnail{
+    min-height: 503px;  /* sprecava da neke knjige budu duze od ostalih;  */ 
+}
+#glavni-footer div{
+    width: 100%;    /* sprecava bug da footer bude siri od ostatka stranice */
+}

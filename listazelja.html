@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="author" content="Pavle Milisavljević pavleelite2017@gs.viser.edu.rs">
+    <meta name="description" content="Lista Želja">
+    <meta name="keywords" content="Prodavnica,Knjige,Lista želja">
+    <title>Bukstor Lista Želja</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" class="img-responsive" ></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Knjige<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="./knjige.html#trileri">Trileri</a></li>
+                  <li><a href="./knjige.html#decije">Dečije</a></li>
+                  <li><a href="./knjige.html#horori">Horori </a></li>
+                  <li><a href="./knjige.html#istorijski">Istorijski </a></li>
+                  <li><a href="./knjige.html#ljubavni">Ljubavni </a></li>
+
+                </ul>
+              </li>
+            <li> <a href="./onama.html">O nama</a></li>
+            <li><a href="./toplista.html">Top lista</a></li>
+         
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pomoć<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="./kontakt.html">Kontakt</a></li>
+                <li><a href="./upripremi.html">Knjige u pripremi</a></li>
+                <li><a href="./faq.html">Često postavljana pitanja</a></li>
+                <li><a href="./mapasajta.html">Mapa sajta</a></li>
+           
+              </ul>
+            </li>
+            
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+              
+            <li><a href="./listazelja.html"><i class="fas fa-heart"></i></a></li>
+            <li><a href="./korpa.html"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="./login.html">Uloguj se</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- kraj navigacije -->
+
+          <div class="container">
+            <div class="page-header">
+              <h1>
+                Lista želja
+              </h1>
+            </div>
+              <!-- 1.knjiga -->
+              <div class="row u-listi">
+              <div class="col-md-2">
+              <img src="./img/knjige/putevisvile.jpg" class="slicica"alt="Putevi svile Piter Frankopan">
+              </div>
+              <h3>Putevi svile <small>Piter Frankopan</small> </h3>
+              <p class="col-md-9">Putevi svile nisu bili egzotični niz puteva, nego mreže koje su povezivale kontinente i okeane. Po toj mreži putovale su ideje, roba, bolesti i smrt. Tu su se carstva osvajala – i gubila. Frankopanovo delo, plod dugogodišnjih istraživanja, temeljno menja sliku koju imamo o istoriji sveta. 
+              <a href="./knjiga.html">Pročitaj više...</a>
+              </p>
+              <p class="col-md-1 text-center">1,599 RSD <br>
+                  <i class="fas fa-heart fa-2x"></i>
+                  <i class="fas fa-shopping-cart fa-2x"></i>
+              </p>
+              </div>
+
+              <!-- 2.knjiga -->
+              <div class="row u-listi">
+              <div class="col-md-2">
+              <img src="./img/knjige/agi.jpg" class="slicica"alt="Agi i Ema Igor Kolarov">
+              </div>
+              <h3>Agi i Ema<small>Igor Kolarov</small></h3>
+              <p class="col-md-9">Po ovom poetskom i duhovitom romanu (ovenčanom Nagradom Politikinog Zabavnika za najbolju dečju knjigu) snimljen je prvi srpski film za decu posle dvadeset pet godina pauze, u režiji Milutina Petrovića. Roman je do sada preveden na engleski, ruski, francuski i italijanski jezik, a u Rusiji je za kratko vreme doživeo dva izdanja.
+                  <a href="./knjiga.html">Pročitaj više...</a>
+              </p>
+              <p class="col-md-1 text-center" > 699 RSD
+                <br>
+                  <i class="fas fa-heart fa-2x "></i>
+                  <i class="fas fa-shopping-cart fa-2x"></i>
+              </p>
+              </div>
+            
+              <!-- 3.knjiga -->
+              <div class="row u-listi">
+                  <div class="col-md-2">
+                  <img src="./img/knjige/veliki juris.jpg" class="slicica"alt="Veliki Juriš Slobodan Vladušić">
+                </div>
+                <h3>Veliki Juriš<small>Slobodan Vladušić</small></h3>
+                <p class="col-md-9">Rano proleće 1916. godine: poručnik srpske vojske Miloš Vojnović oporavlja se na Krfu, u vili Ahileon, od prelaska preko Albanije. Tu upoznaje neobičnu Holanđanku Fani de Grot i postaje očevidac samoubistva srpskog majora koga niko nije oslovljavao po imenu. Napeta potraga za izgubljenim pismom koje je ostalo iza majora, Vojnovića će voditi kroz ulice Krfa, do vrhova Kajmakčalana, a zatim nazad, do solunskih kabarea i Solunskog fronta. Njegova sudbina će se preplitati sa životima Stanislava Krakova, vojvode Vuka, majora Kalafatovića, kao i sa akcijama tajanstvenog bugarskog oficira koga će pratiti u stopu, da bi se, na kraju puta, suočio sa maglom. 
+                <a href="./knjiga.html">Pročitaj više...</a>
+                </p>
+                <p class="col-md-1 text-center">2,000 RSD
+                  <br>
+                  <i class="fas fa-heart fa-2x"></i>
+                  <i class="fas fa-shopping-cart fa-2x"></i>
+                </p>
+              </div>
+            
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                  <a class="btn btn-primary center-block " href="./korpa.html">U Korpu</a>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
+          </div>
+
+    <footer id="glavni-footer">
+      <div class="row">
+      <div class="col-md-12 text-center"> 
+        <ul class="list-inline crna-lista">
+          <li><a href="./knjige.html">Knjige</a></li>
+          <li><a href="./onama.html">O nama</a></li>
+          <li><a href="./kontakt.html">Kontakt</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x"></i></a></li>
+          <li><a href="https://twitter.com/"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+       </ul>
+      </div>
+         
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p><i class="fas fa-copyright"></i>Pavle Milisavljević, Voždovac, <a  href="mailto:pavleelite2017@gs.viser.edu.rs">pavleelite2017@gs.viser.edu.rs</a></p>
+        </div>
+      </div>  
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

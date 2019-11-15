@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="author" content="Pavle Milisavljević pavleelite2017@gs.viser.edu.rs">
+    <meta name="description" content="Registracija korisnika">
+    <meta name="keywords" content="Prodavnica,Knjige,registracija,nalog">
+    <title>Bukstor Registracija</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <!-- pocetak navigacije -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" class="img-responsive" ></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Knjige<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="./knjige.html#trileri">Trileri</a></li>
+                  <li><a href="./knjige.html#decije">Dečije</a></li>
+                  <li><a href="./knjige.html#horori">Horori </a></li>
+                  <li><a href="./knjige.html#istorijski">Istorijski </a></li>
+                  <li><a href="./knjige.html#ljubavni">Ljubavni </a></li>
+
+                </ul>
+              </li>
+            <li> <a href="./onama.html">O nama</a></li>
+            <li><a href="./toplista.html">Top lista</a></li>
+         
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pomoć<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="./kontakt.html">Kontakt</a></li>
+                <li><a href="./upripremi.html">Knjige u pripremi</a></li>
+                <li><a href="./faq.html">Često postavljana pitanja</a></li>
+                <li><a href="./mapasajta.html">Mapa sajta</a></li>
+           
+              </ul>
+            </li>
+            
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+             
+            <li><a href="./listazelja.html"><i class="fas fa-heart"></i></a></li>
+            <li><a href="./korpa.html"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="./login.html">Uloguj se</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- kraj navigacije -->
+        
+          <section class="container" style="min-height: 75vh">
+              <div class="page-header">
+                  <h1>
+                    Kreirajte vaš nalog
+                  </h1>
+                </div>
+            <form action="#" class="center-block">
+                <div class="input-group-addon">
+                    <label for="ime">Unesite vaše puno ime:</label>
+                    <input type="text" id="ime" class="form-control" required placeholder="Ime Prezime">
+                    <br>
+                    <label for="email">Unesite vaš e-mail:</label>
+                    <input class="form-control" type="email" id="email" required placeholder="primer@mail.com">
+                    <br>
+                    <label for="sifra">Kreirajte šifru:</label>
+                    <input type="password" class="form-control"id="sifra" required >
+                    <br>
+                    <label for="sifra2">Ponovite šifru:</label>
+                    <input type="password" class="form-control"id="sifra2" required >
+                    <br>
+                    <span><label  for="muskarac"><i class="fas fa-male fa-3x"></i></label></span>
+                    <input type="radio" name="pol" id="muskarac">
+                    <input type="radio" name="pol" id="zena">
+                    <span><label  for="zena"><i class="fas fa-female fa-3x"></i></label></span>
+                    <br><br>
+                    <label for="newsletter">Želim da se prijavim na newsletter&nbsp;</label>
+                    <input type="checkbox" name="newsletter" id="newsletter" checked>
+                    <br><br>
+                    <a class="btn btn-primary" href="./izlaznastrana.html">Kreiraj nalog</a>
+                    <br>
+                </div>
+                
+                  
+
+
+            </form>
+          </section>
+    
+    <footer id="glavni-footer">
+      <div class="row">
+      <div class="col-md-12 text-center"> 
+        <ul class="list-inline crna-lista">
+          <li><a href="./knjige.html">Knjige</a></li>
+          <li><a href="./onama.html">O nama</a></li>
+          <li><a href="./kontakt.html">Kontakt</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x"></i></a></li>
+          <li><a href="https://twitter.com/"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+       </ul>
+      </div>
+         
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p><i class="fas fa-copyright"></i>Pavle Milisavljević, Voždovac, <a href="mailto:pavleelite2017@gs.viser.edu.rs">pavleelite2017@gs.viser.edu.rs</a></p>
+        </div>
+      </div>  
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

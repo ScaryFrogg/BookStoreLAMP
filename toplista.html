@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="author" content="Pavle Milisavljević pavleelite2017@gs.viser.edu.rs">
+    <meta name="description" content="Top lista na našem sajtu sa najbolje rangiranim knjigama">
+    <meta name="keywords" content="Prodavnica,Knjige,Top lista,najpopularnije knjige">
+    <title>Bukstor Top Lista</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+<nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" class="img-responsive" ></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Knjige<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="./knjige.html#trileri">Trileri</a></li>
+                  <li><a href="./knjige.html#decije">Dečije</a></li>
+                  <li><a href="./knjige.html#horori">Horori </a></li>
+                  <li><a href="./knjige.html#istorijski">Istorijski </a></li>
+                  <li><a href="./knjige.html#ljubavni">Ljubavni </a></li>
+
+                </ul>
+              </li>
+            <li> <a href="./onama.html">O nama</a></li>
+            <li><a href="./toplista.html">Top lista</a></li>
+         
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pomoć<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="./kontakt.html">Kontakt</a></li>
+                <li><a href="./upripremi.html">Knjige u pripremi</a></li>
+                <li><a href="./faq.html">Često postavljana pitanja</a></li>
+                <li><a href="./mapasajta.html">Mapa sajta</a></li>
+           
+              </ul>
+            </li>
+            
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+             
+            <li><a href="./listazelja.html"><i class="fas fa-heart"></i></a></li>
+            <li><a href="./korpa.html"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="./login.html">Uloguj se</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- kraj navigacije -->
+
+  <div class="container">
+      <div class="page-header">
+          <h1>
+            Top lista
+          </h1>
+        </div>
+      <!-- thumbnail 1 -->
+    <div class="row">
+        
+      <div class="col-md-12 center-block">
+        <div class="thumbnail">
+          <img src="./img/knjige/aleksandar.jpg" class="img-responsive" alt="...">
+          <div class="caption">
+            <h2 class="text-center text-danger">1.</h2>
+            <h3 class="text-center">Aleksandar od Jugoslavije</h3>
+            <p></p>
+            <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- 2 -->
+    <div class="row">
+        <div class=" col-md-6">
+            <div class="thumbnail">
+              <img src="./img/knjige/koreni.jpg" class="img-responsive" alt="Koreni Dobrica Ćosić">
+              <div class="caption">
+                <h2 class="text-center text-danger">2.</h2>
+                <h3 class="text-center">Koreni</h3>
+                <p></p>
+                <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
+              </div>
+            </div>
+          </div>
+        <!-- 3 -->
+          <div class=" col-md-6">
+            <div class="thumbnail">
+              <img src="./img/knjige/zivot.jpg" class="img-responsive" alt="...">
+              <div class="caption">
+                <h2 class="text-center text-danger">3.</h2>
+                <h3 class="text-center">Život bez krpelja</h3>
+                <p></p>
+                <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="row">   
+      <!-- 4 -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <img src="./img/knjige/covek.jpg"  class="img-responsive" alt="...">
+          <div class="caption">
+            <h2 class="text-center text-danger">4.</h2>
+            <h3 class="text-center">Čovek po imenu Uve</h3>
+            <p></p>
+            <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <img src="./img/knjige/molitva.jpg" class="img-responsive" alt="...">
+          <div class="caption">
+            <h2 class="text-center text-danger">5.</h2>
+            <h3 class="text-center">Molitva moru</h3>
+            <p></p>
+            <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
+          </div>
+        </div>
+      </div>
+      
+    
+    </div>
+  </div>
+
+    <footer id="glavni-footer">
+      <div class="row">
+      <div class="col-md-12 text-center"> 
+        <ul class="list-inline crna-lista">
+          <li><a href="./knjige.html">Knjige</a></li>
+          <li><a href="./onama.html">O nama</a></li>
+          <li><a href="./kontakt.html">Kontakt</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x"></i></a></li>
+          <li><a href="https://twitter.com/"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+       </ul>
+      </div>
+         
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p><i class="fas fa-copyright"></i>Pavle Milisavljević, Voždovac, <a href="mailto:pavleelite2017@gs.viser.edu.rs">pavleelite2017@gs.viser.edu.rs</a></p>
+        </div>
+      </div>  
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
