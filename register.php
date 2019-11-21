@@ -21,6 +21,11 @@
 </head>
 
 <body>
+<!-- navigacija -->
+  <?php 
+  isipisHtml("nav");
+  ?>
+<!-- telo -->
   <section class="container" style="min-height: 75vh">
     <div class="page-header">
       <h1>
@@ -54,7 +59,10 @@
       </div>
     </form>
   </section>
-
+  <!-- footer -->
+  <?php 
+    isipisHtml("footer");
+  ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>

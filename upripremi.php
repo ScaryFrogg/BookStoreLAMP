@@ -18,160 +18,95 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <!-- pocetak navigacije -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" class="img-responsive" ></a>
-        </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Knjige<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="./knjige.html#trileri">Trileri</a></li>
-                  <li><a href="./knjige.html#decije">Dečije</a></li>
-                  <li><a href="./knjige.html#horori">Horori </a></li>
-                  <li><a href="./knjige.html#istorijski">Istorijski </a></li>
-                  <li><a href="./knjige.html#ljubavni">Ljubavni </a></li>
-
-                </ul>
-              </li>
-            <li> <a href="./onama.html">O nama</a></li>
-            <li><a href="./toplista.html">Top lista</a></li>
-         
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pomoć<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="./kontakt.html">Kontakt</a></li>
-                <li><a href="./upripremi.html">Knjige u pripremi</a></li>
-                <li><a href="./faq.html">Često postavljana pitanja</a></li>
-                <li><a href="./mapasajta.html">Mapa sajta</a></li>
-           
-              </ul>
-            </li>
-            
-          </ul>
-          
-          <ul class="nav navbar-nav navbar-right">
-            
-            <li><a href="./listazelja.html"><i class="fas fa-heart"></i></a></li>
-            <li><a href="./korpa.html"><i class="fas fa-shopping-cart"></i></a></li>
-            <li><a href="./login.html">Uloguj se</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <!-- kraj navigacije -->
+  <!-- navigacija -->
+  <?php 
+    isipisHtml("nav");
+    ?>
+  <!-- telo -->
 
 
+  <div class="container">
+    <div class="page-header">
+    <h1> Knjige u pripremi </h1>
+    </div>
     <div class="container">
-      <div class="page-header">
-      <h1> Knjige u pripremi </h1>
-      </div>
-      <div class="container">
-   <div class="row">
-        <h2></h2>
-        <div class=" col-lg-3 col-md-4 col-xs-6">
-          <div class="thumbnail">
-            <img src="./img/knjige/devojka-ketrin_kukson_s.jpg " class="img-responsive" alt="Devojka
-            Ketrin Kukson
-            Datum objavljivanja: januar 2019.">
-            <div class="caption">
-              
-              <h3 class="text-center">Devojka</h3>
-              <p class="text-center">Ketrin Kukson</p>
+  <div class="row">
+      <h2></h2>
+      <div class=" col-lg-3 col-md-4 col-xs-6">
+        <div class="thumbnail">
+          <img src="./img/knjige/devojka-ketrin_kukson_s.jpg " class="img-responsive" alt="Devojka
+          Ketrin Kukson
+          Datum objavljivanja: januar 2019.">
+          <div class="caption">
+            
+            <h3 class="text-center">Devojka</h3>
+            <p class="text-center">Ketrin Kukson</p>
 
-              <p class="text-center"><a href="#" class="btn btn-primary" role="button">Više o knjizi</a></p>
-              <p class="text-center">Datum objavljivanja: januar 2019.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class=" col-lg-3 col-md-4 col-xs-6">
-          <div class="thumbnail">
-            <img src="./img/knjige/trag-patrisa_kornvel_s.jpg " class="img-responsive" alt="Trag
-            Patriša Kornvel
-            Datum objavljivanja: januar 2019.">
-            <div class="caption">
-              
-              <h3 class="text-center">Trag</h3>
-              <p class="text-center">Patriša Kornvel</p>
-
-              <p class="text-center"><a href="#" class="btn btn-primary" role="button">Više o knjizi</a></p>
-              <p class="text-center">Datum objavljivanja: januar 2019.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class=" col-lg-3 col-md-4 col-xs-6">
-          <div class="thumbnail">
-            <img src="./img/knjige/pletenica-letisja_kolombani_s.jpg " class="img-responsive" alt="Pletenica
-            Letisja Kolombani
-            Datum objavljivanja: januar 2019.">
-            <div class="caption">
-              
-              <h3 class="text-center">Pletenica</h3>
-              <p class="text-center">Letisja Kolombani</p>
-
-              <p class="text-center"><a href="#" class="btn btn-primary" role="button">Više o knjizi</a></p>
-              <p class="text-center">Datum objavljivanja: januar 2019.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class=" col-lg-3 col-md-4 col-xs-6">
-          <div class="thumbnail">
-            <img src="./img/knjige/povest_o_opsadi_lisabona-zoze_saramago_s.jpg " class="img-responsive" alt="Povest o opsadi Lisabona
-            Žoze Saramago
-            Datum objavljivanja: januar 2019.">
-            <div class="caption">
-              
-              <h3 class="text-center">Povest o opsadi Lisabona</h3>
-              <p class="text-center">Žoze Saramago</p>
-
-              <p class="text-center"><a href="#" class="btn btn-primary" role="button">Više o knjizi</a></p>
-              <p class="text-center">Datum objavljivanja: januar 2019.</p>
-            </div>
+            <p class="text-center"><a href="#" class="btn btn-primary" role="button">Više o knjizi</a></p>
+            <p class="text-center">Datum objavljivanja: januar 2019.</p>
           </div>
         </div>
       </div>
-  
+
+      <div class=" col-lg-3 col-md-4 col-xs-6">
+        <div class="thumbnail">
+          <img src="./img/knjige/trag-patrisa_kornvel_s.jpg " class="img-responsive" alt="Trag
+          Patriša Kornvel
+          Datum objavljivanja: januar 2019.">
+          <div class="caption">
+            
+            <h3 class="text-center">Trag</h3>
+            <p class="text-center">Patriša Kornvel</p>
+
+            <p class="text-center"><a href="#" class="btn btn-primary" role="button">Više o knjizi</a></p>
+            <p class="text-center">Datum objavljivanja: januar 2019.</p>
+          </div>
+        </div>
       </div>
 
+      <div class=" col-lg-3 col-md-4 col-xs-6">
+        <div class="thumbnail">
+          <img src="./img/knjige/pletenica-letisja_kolombani_s.jpg " class="img-responsive" alt="Pletenica
+          Letisja Kolombani
+          Datum objavljivanja: januar 2019.">
+          <div class="caption">
+            
+            <h3 class="text-center">Pletenica</h3>
+            <p class="text-center">Letisja Kolombani</p>
+
+            <p class="text-center"><a href="#" class="btn btn-primary" role="button">Više o knjizi</a></p>
+            <p class="text-center">Datum objavljivanja: januar 2019.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col-lg-3 col-md-4 col-xs-6">
+        <div class="thumbnail">
+          <img src="./img/knjige/povest_o_opsadi_lisabona-zoze_saramago_s.jpg " class="img-responsive" alt="Povest o opsadi Lisabona
+          Žoze Saramago
+          Datum objavljivanja: januar 2019.">
+          <div class="caption">
+            
+            <h3 class="text-center">Povest o opsadi Lisabona</h3>
+            <p class="text-center">Žoze Saramago</p>
+
+            <p class="text-center"><a href="#" class="btn btn-primary" role="button">Više o knjizi</a></p>
+            <p class="text-center">Datum objavljivanja: januar 2019.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     </div>
-   
-      
-    <footer id="glavni-footer">
-      <div class="row">
-      <div class="col-md-12 text-center"> 
-        <ul class="list-inline crna-lista">
-          <li><a href="./knjige.html">Knjige</a></li>
-          <li><a href="./onama.html">O nama</a></li>
-          <li><a href="./kontakt.html">Kontakt</a></li>
-          <li><a href="./faq.html">FAQ</a></li>
-          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a></li>
-          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x"></i></a></li>
-          <li><a href="https://twitter.com/"><i class="fab fa-twitter-square fa-2x"></i></a></li>
-       </ul>
-      </div>
-         
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p><i class="fas fa-copyright"></i>Pavle Milisavljević, Voždovac, <a href="mailto:pavleelite2017@gs.viser.edu.rs">pavleelite2017@gs.viser.edu.rs</a></p>
-        </div>
-      </div>  
-    </footer>
+
+
+  </div>
+  
+    
+  <!-- footer -->
+  <?php 
+    isipisHtml("footer");
+  ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

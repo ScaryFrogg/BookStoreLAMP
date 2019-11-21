@@ -21,59 +21,11 @@ session_start();
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" class="img-responsive" ></a>
-        </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Knjige<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="./knjige.html#trileri">Trileri</a></li>
-                  <li><a href="./knjige.html#decije">Dečije</a></li>
-                  <li><a href="./knjige.html#horori">Horori </a></li>
-                  <li><a href="./knjige.html#istorijski">Istorijski </a></li>
-                  <li><a href="./knjige.html#ljubavni">Ljubavni </a></li>
-
-                </ul>
-              </li>
-            <li> <a href="./onama.html">O nama</a></li>
-            <li><a href="./toplista.html">Top lista</a></li>
-         
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pomoć<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="./kontakt.html">Kontakt</a></li>
-                <li><a href="./upripremi.html">Knjige u pripremi</a></li>
-                <li><a href="./faq.html">Često postavljana pitanja</a></li>
-                <li><a href="./mapasajta.html">Mapa sajta</a></li>
-           
-              </ul>
-            </li>
-            
-          </ul>
-          
-          <ul class="nav navbar-nav navbar-right">
-              
-            <li><a href="./listazelja.html"><i class="fas fa-heart"></i></a></li>
-            <li><a href="./korpa.html"><i class="fas fa-shopping-cart"></i></a></li>
-            <li><a href="./login.html">Uloguj se</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <!-- kraj navigacije -->
+  <!-- navigacija -->
+  <?php 
+    isipisHtml("nav");
+    ?>
+  <!-- telo -->
     
     <div class="container" style="min-height: 75vh">
       <div class="page-header">
@@ -121,26 +73,10 @@ session_start();
       
     </div>
     
-    <footer id="glavni-footer">
-      <div class="row">
-      <div class="col-md-12 text-center"> 
-        <ul class="list-inline crna-lista">
-          <li><a href="./knjige.html">Knjige</a></li>
-          <li><a href="./onama.html">O nama</a></li>
-          <li><a href="./kontakt.html">Kontakt</a></li>
-          <li><a href="./faq.html">FAQ</a></li>
-          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a></li>
-          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x"></i></a></li>
-          <li><a href="https://twitter.com/"><i class="fab fa-twitter-square fa-2x"></i></a></li>
-       </ul>
-      </div>
-         
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p><i class="fas fa-copyright"></i>Pavle Milisavljević, Voždovac, <a href="mailto:pavleelite2017@gs.viser.edu.rs">pavleelite2017@gs.viser.edu.rs</a></p>
-        </div>
-      </div>  
-    </footer>
+  <!-- footer -->
+  <?php 
+    isipisHtml("footer");
+  ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

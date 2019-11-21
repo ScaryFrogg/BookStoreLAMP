@@ -21,72 +21,41 @@ session_start();
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <!-- pocetak navigacije -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" class="img-responsive" ></a>
-        </div>
-    
-        <!-- Collect the nav links, and other content for toggling -->
-        
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <!-- kraj navigacije -->
-    <div class="container" style="min-height: 75vh">
-      <div class="page-header">
-        <h1>Kontakt</h1>
+  <!-- navigacija -->
+  <?php 
+    isipisHtml("nav");
+    ?>
+  <!-- telo -->
+  <div class="container" style="min-height: 75vh">
+    <div class="page-header">
+      <h1>Kontakt</h1>
+    </div>
+  <div class="container-fluid">
+  <div class="row">
+      <div class="col-md-3">
       </div>
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-            <ul class="list-unstyled crna-lista">
-                <li><i class="fas fa-phone" aria-hidden="true"></i> Telefon: <span class="pull-right"><a href="tel:+381-66-418-430">066/418-430</a></span></li>
-                <li><i class="far fa-envelope" id="maile" aria-hidden="true"></i> E-mail: <span class="pull-right"><a href="mailto:pavleelite2017@gs.viser.edu.rs">pavleelite2017@gs.viser.edu.rs</a></span></li>
-                <li><i class="fas fa-map-marker" aria-hidden="true"></i> Adresa: <span class="pull-right">Vojvode Stepe 283, Voždovac</span></li> 
-            </ul> 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.6173139229704!2d20.47988488717085!3d44.76821879436535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a70f8df8b60e1%3A0x8fd9cdf24bd4d39!2z0JLQvtGY0LLQvtC00LUg0KHRgtC10L_QtSAyODMsINCR0LXQvtCz0YDQsNC0!5e0!3m2!1ssr!2srs!4v1546996091778" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            <br><br>
-            <p class="text-center"><a href="./index.html" class="btn btn-primary">Nazad na početnu</a></p>
-        </div>
-        <div class="col-md-3">
-           
-        </div>
-    </div>
-    </div>
-      
-    </div>
-    
-    <footer id="glavni-footer">
-      <div class="row">
-      <div class="col-md-12 text-center"> 
-        <ul class="list-inline crna-lista">
-          <li><a href="./knjige">Knjige</a></li>
-          <li><a href="./onama.html">O nama</a></li>
-          <li><a href="./kontakt.html">Kontakt</a></li>
-          <li><a href="./faq.html">FAQ</a></li>
-          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a></li>
-          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x"></i></a></li>
-          <li><a href="https://twitter.com/"><i class="fab fa-twitter-square fa-2x"></i></a></li>
-       </ul>
+      <div class="col-md-6">
+          <ul class="list-unstyled crna-lista">
+              <li><i class="fas fa-phone" aria-hidden="true"></i> Telefon: <span class="pull-right"><a href="tel:+381-66-418-430">066/418-430</a></span></li>
+              <li><i class="far fa-envelope" id="maile" aria-hidden="true"></i> E-mail: <span class="pull-right"><a href="mailto:pavleelite2017@gs.viser.edu.rs">pavleelite2017@gs.viser.edu.rs</a></span></li>
+              <li><i class="fas fa-map-marker" aria-hidden="true"></i> Adresa: <span class="pull-right">Vojvode Stepe 283, Voždovac</span></li> 
+          </ul> 
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.6173139229704!2d20.47988488717085!3d44.76821879436535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a70f8df8b60e1%3A0x8fd9cdf24bd4d39!2z0JLQvtGY0LLQvtC00LUg0KHRgtC10L_QtSAyODMsINCR0LXQvtCz0YDQsNC0!5e0!3m2!1ssr!2srs!4v1546996091778" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <br><br>
+          <p class="text-center"><a href="./index.html" class="btn btn-primary">Nazad na početnu</a></p>
       </div>
-         
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p><i class="fas fa-copyright"></i>Pavle Milisavljević, Voždovac, <a href="mailto:pavleelite2017@gs.viser.edu.rs">pavleelite2017@gs.viser.edu.rs</a></p>
-        </div>
-      </div>  
-    </footer>
+      <div class="col-md-3">
+          
+      </div>
+  </div>
+  </div>
+    
+  </div>
+  
+  <!-- footer -->
+  <?php 
+    isipisHtml("footer");
+  ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

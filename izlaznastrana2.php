@@ -1,5 +1,6 @@
 <?php
 session_start();
+//Ako nije doso sa druge ne moze da prisupi ovoj
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,26 +36,10 @@ session_start();
         </div>
     </div>
     </div>
-    <footer id="glavni-footer">
-      <div class="row">
-      <div class="col-md-12 text-center"> 
-        <ul class="list-inline crna-lista">
-          <li><a href="./knjige">Knjige</a></li>
-          <li><a href="./onama.html">O nama</a></li>
-          <li><a href="./kontakt.html">Kontakt</a></li>
-          <li><a href="./faq.html">FAQ</a></li>
-          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a></li>
-          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x"></i></a></li>
-          <li><a href="https://twitter.com/"><i class="fab fa-twitter-square fa-2x"></i></a></li>
-       </ul>
-      </div>
-         
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p><i class="fas fa-copyright"></i>Pavle Milisavljević, Voždovac, <a href="mailto:pavleelite2017@gs.viser.edu.rs">pavleelite2017@gs.viser.edu.rs</a></p>
-        </div>
-      </div>  
-    </footer>
+  <!-- footer -->
+  <?php 
+    isipisHtml("footer");
+  ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
