@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once "funkcije.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +10,8 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="author" content="Pavle Milisavljević pavleelite2017@gs.viser.edu.rs">
-  <meta name="description" content="Prijavljivanje korisnika">
-  <meta name="keywords" content="Prodavnica,Knjige,login,Pirjava">
-  <title>Bukstor Prijava</title>
+ 
+ <title>Bukstor Prijava</title>
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -35,21 +34,34 @@ session_start();
         Pristupite vašem nalogu
       </h1>
     </div>
-    <form action="#" class="center-block">
+    <form action="login.php" class="center-block" method="POST">
       <div class="input-group-addon">
 
         <label for="email">Unesite vaš e-mail:</label>
-        <input class="form-control" type="email" id="email" required placeholder="primer@mail.com">
+        <input class="form-control" type="email" name="email" id="email" required placeholder="primer@mail.com">
         <br>
         <label for="sifra">Unesite vašu sifru:</label>
-        <input type="password" class="form-control" id="sifra" required>
+        <input type="password" name="password" class="form-control" id="sifra" required>
         <br><br>
-        <button type="submit" class="btn btn-primary center-block">&nbsp;&nbsp;Uloguj se&nbsp;&nbsp;</button>
+        <button type="submit" name="btn_login" class="btn btn-primary center-block">&nbsp;&nbsp;Uloguj se&nbsp;&nbsp;</button>
         <br>
         <a class="btn btn-primary" href="./register.html">Kreiraj nalog</a>
         <br>
       </div>
+    <?php
+    if(isset($_POST['btn_login'])){
+      $username=$_POST['email'];
+      $password=$_POST['password'];
+      // Create connection
+      $conn = mysqli_connect("localhost", $username, $password);
 
+      // Check connection
+      if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+      }
+      echo "Connected successfully";
+    }
+    ?>
     </form>
   </section>
   <!-- footer -->

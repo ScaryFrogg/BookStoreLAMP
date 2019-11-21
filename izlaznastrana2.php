@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once "funkcije.php"
 //Ako nije doso sa druge ne moze da prisupi ovoj
 ?>
 <!DOCTYPE html>
