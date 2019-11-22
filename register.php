@@ -1,5 +1,6 @@
 <?php
 session_start();
+if(isset($_SESSION["email"])) header("Location: index.php");
 include_once "funkcije.php"
 ?>
 <!DOCTYPE html>
@@ -36,19 +37,21 @@ include_once "funkcije.php"
         Kreirajte vaš nalog
       </h1>
     </div>
-    <form action="#" class="center-block">
+    <form action="server.php" method="POST" class="center-block">
       <div class="input-group-addon">
-        <label for="ime">Unesite vaše puno ime:</label>
-        <input type="text" id="ime" class="form-control" required placeholder="Ime Prezime">
+        <label for="ime">Unesite vaše ime:</label>
+        <input type="text" id="ime" name="ime" class="form-control" required placeholder="Ime">
+        <label for="prezime">Unesite vaše prezime:</label>
+        <input type="text" id="prezime" name="prezime" class="form-control" required placeholder="Prezime">
         <br>
         <label for="email">Unesite vaš e-mail:</label>
-        <input class="form-control" type="email" id="email" required placeholder="primer@mail.com">
+        <input class="form-control" type="email" id="email" name="email" required placeholder="primer@mail.com">
         <br>
         <label for="sifra">Kreirajte šifru:</label>
-        <input type="password" class="form-control" id="sifra" required>
+        <input type="password" class="form-control" id="sifra" name="sifra1" required>
         <br>
         <label for="sifra2">Ponovite šifru:</label>
-        <input type="password" class="form-control" id="sifra2" required>
+        <input type="password" class="form-control" id="sifra2" name="sifra2" required>
         <br>
         <span><label for="muskarac"><i class="fas fa-male fa-3x"></i></label></span>
         <input type="radio" name="pol" id="muskarac">
@@ -58,7 +61,7 @@ include_once "funkcije.php"
         <label for="newsletter">Želim da se prijavim na newsletter&nbsp;</label>
         <input type="checkbox" name="newsletter" id="newsletter" checked>
         <br><br>
-        <a class="btn btn-primary" href="./izlaznastrana.html">Kreiraj nalog</a>
+        <button class="btn btn-primary" type="submit">Kreiraj nalog</button>
         <br>
       </div>
     </form>

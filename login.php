@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (isset($_SESSION["email"])){
+  header("Location: index.php");
+}
+
 include_once "funkcije.php"
 ?>
 <!DOCTYPE html>
@@ -34,7 +38,7 @@ include_once "funkcije.php"
         Pristupite vašem nalogu
       </h1>
     </div>
-    <form action="login.php" class="center-block" method="POST">
+    <form action="loginServer.php" class="center-block" method="POST">
       <div class="input-group-addon">
 
         <label for="email">Unesite vaš e-mail:</label>
@@ -48,20 +52,6 @@ include_once "funkcije.php"
         <a class="btn btn-primary" href="./register.html">Kreiraj nalog</a>
         <br>
       </div>
-    <?php
-    if(isset($_POST['btn_login'])){
-      $username=$_POST['email'];
-      $password=$_POST['password'];
-      // Create connection
-      $conn = mysqli_connect("localhost", $username, $password);
-
-      // Check connection
-      if (!$conn) {
-          die("Connection failed: " . mysqli_connect_error());
-      }
-      echo "Connected successfully";
-    }
-    ?>
     </form>
   </section>
   <!-- footer -->
