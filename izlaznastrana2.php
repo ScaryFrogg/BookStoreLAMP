@@ -9,10 +9,6 @@ include_once "funkcije.php"
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Pavle Milisavljević pavleelite2017@gs.viser.edu.rs">
-    <meta name="description" content="uspešno poslata poruka ">
-    <meta name="keywords" content="Prodavnica,Knjige,poslata poruka">
-    
     <title>Bukstor Poruka uspešno poslata</title>
 
     <!-- Bootstrap -->

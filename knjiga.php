@@ -22,6 +22,7 @@ include_once "funkcije.php"
     isipisHtml("nav");
     ?>
     <!-- telo -->
+
     <div class="container knjiga">
       <div class="row">
         <div class="col-md-2">
@@ -33,7 +34,6 @@ include_once "funkcije.php"
             <p>Povez:</p>
             <p>Godina izdanja:</p>
             <p>ISBN:</p>
-            <p>Prevodilac:</p>
           </div>
         </div>
         <div class="col-md-7">  
@@ -51,6 +51,7 @@ include_once "funkcije.php"
         </div>
       </div>
     </div>
+    
   <!-- footer -->
   <?php 
     isipisHtml("footer");

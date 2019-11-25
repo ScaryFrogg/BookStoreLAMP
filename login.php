@@ -45,7 +45,7 @@ include_once "funkcije.php"
         <input class="form-control" type="email" name="email" id="email" required placeholder="primer@mail.com">
         <br>
         <label for="sifra">Unesite vašu sifru:</label>
-        <input type="password" name="password" class="form-control" id="sifra" required>
+        <input type="password" name="sifra" class="form-control" id="sifra" required>
         <br><br>
         <button type="submit" name="btn_login" class="btn btn-primary center-block">&nbsp;&nbsp;Uloguj se&nbsp;&nbsp;</button>
         <br>
