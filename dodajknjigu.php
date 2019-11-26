@@ -1,8 +1,14 @@
 <?php
 session_start();
 if (!(isset($_SESSION["email"]))&&(!$_SESSION["tip_naloga"]=="administrator")){
-    header("Location: index.php");
-  }
+  header("Location: index.php");
+}
+if(isset($_GET["btn_dodajKnjigu"])){
+  //dodavanje knjige u bazu
+
+  //preusmeravanje ili neko obavestenje
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,30 +20,53 @@ if (!(isset($_SESSION["email"]))&&(!$_SESSION["tip_naloga"]=="administrator")){
      <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>Dodaj Knjigu</title>
     <style>
-      #drop-area{
-        border: 5px solid purple;
-        height: 20vw;
-        width: 20vw;
-        position:relative;
+      .box__dragndrop,
+      .box__uploading,
+      .box__success,
+      .box__error {
+        display: none;
       }
-      #drop-area>p{
-        height: 20vw;
-        width: 20vw;
-        position:absolute;
-        left: 50%;
-        margin-left: -10vw;
-        top: 50%;
-        margin-top: -10vw;
-        line-height:20vw;
-        text-align:center
-      }
+
     </style>
 </head>
 <body>
-    <div id="drop-area">
-        <p>Prevucite sliku ovde</p>
+
+  <div class="container knjiga">
+    <div class="row">
+      <form action="dodajKnjigu.php" method="GET">
+        <div class="col-md-2">
+        <div id="drop" style="height:500px;width:500px">
+          <input  type="file" name="slika" id="fileUploadovan" max=1 />
+          <label for="slika"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+        </div>
+          <div class="text-center">
+         
+          <br>
+            <label for="format">Format:</label> <input type="text"name="format"id="format">
+            <label for="brStrana">Broj strana:</label> <input type="text"name="brStrana"id="brStrana">
+            <label for="godIzdanja">Godina izdanja:</label> <input type="text"name="godIzdanja"id="godIzdanja">
+            
+          </div>
+        </div>
+        <div class="col-md-7">  
+          <h2 class="naslov-knjige">Naslov Knjige</h2>
+          <input type="text" name="naslov">
+          <h3>Autor Knjige</h3>
+          <input type="text" name="autor">
+          <h4>Kategorija:</h4>
+          <input type="text" name="kategorija">
+          <p class="oknjizi">O knjizi</p>
+          <textarea name="opis" cols="70" rows="10"></textarea>
+        </div>
+        <div class="col-md-3">
+          <div class="cena">
+            <h3>Cena: </h3>
+            <input type="text" name="cena">
+          </div>
+        </div>
+      </form>
     </div>
-    <img src="./img/logo.png" alt="" draggable=true>
-    <script src="./js/dragAndDrop.js"></script>
+  </div>
+  <script src="./js/dragAndDrop.js"></script>
 </body>
 </html>
