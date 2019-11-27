@@ -3,9 +3,12 @@ session_start();
 if (!(isset($_SESSION["email"]))&&(!$_SESSION["tip_naloga"]=="administrator")){
   header("Location: index.php");
 }
-if(isset($_GET["btn_dodajKnjigu"])){
+if(isset($_POST["btn_dodajKnjigu"])){
   //dodavanje knjige u bazu
-
+  $putDoSlike = "img/".basename($_FILES["slika"]["name"]);
+  if (move_uploaded_file($_FILES["slika"]["tmp_name"], $putDoSlike)) {
+    echo "The file ". basename( $_FILES["slika"]["name"]). " has been uploaded.";
+  }
   //preusmeravanje ili neko obavestenje
 
 }
@@ -19,25 +22,18 @@ if(isset($_GET["btn_dodajKnjigu"])){
      <!-- Bootstrap -->
      <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>Dodaj Knjigu</title>
-    <style>
-      .box__dragndrop,
-      .box__uploading,
-      .box__success,
-      .box__error {
-        display: none;
-      }
 
-    </style>
 </head>
 <body>
 
   <div class="container knjiga">
     <div class="row">
-      <form action="dodajKnjigu.php" method="GET">
+      <form action=""  enctype="multipart/form-data">
         <div class="col-md-2">
         <div id="drop" style="height:500px;width:500px">
-          <input  type="file" name="slika" id="fileUploadovan" max=1 />
+          <input  type="file" name="slika" id="fileUploadovan" />
           <label for="slika"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+          <img src="#" alt="" id="slikaZaProveru">
         </div>
           <div class="text-center">
          
@@ -64,9 +60,16 @@ if(isset($_GET["btn_dodajKnjigu"])){
             <input type="text" name="cena">
           </div>
         </div>
-      </form>
     </div>
+  <div>
+  <div class="row">
+  
   </div>
+  </form>
+  </div>
+  <button id="btn_dodajKnjigu">Dodaj Knjigu</button>
+  </div>
+
   <script src="./js/dragAndDrop.js"></script>
 </body>
 </html>

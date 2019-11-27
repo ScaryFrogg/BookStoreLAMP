@@ -49,7 +49,7 @@ include_once "funkcije.php"
         <br><br>
         <button type="submit" name="btn_login" class="btn btn-primary center-block">&nbsp;&nbsp;Uloguj se&nbsp;&nbsp;</button>
         <br>
-        <a class="btn btn-primary" href="./register.html">Kreiraj nalog</a>
+        <a class="btn btn-primary" href="./register.php">Kreiraj nalog</a>
         <br>
       </div>
     </form>
