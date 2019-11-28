@@ -1,6 +1,10 @@
 <?php
 session_start();
-include_once "funkcije.php"
+include_once "funkcije.php";
+$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
+$id=$_GET['id'];
+$sql ="SELECT * FROM knjiga WHERE knjiga_id=$id LIMIT 1";
+$knjiga=mysqli_fetch_assoc(mysqli_query($db,$sql));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +30,7 @@ include_once "funkcije.php"
     <div class="container knjiga">
       <div class="row">
         <div class="col-md-2">
-          <img src="./img/knjige/bookfiller.png" class="img-responsive center-block" alt="knjiga nema sliku">
+          <img src="<?php echo $knjiga["slika"]?>" class="img-responsive center-block" alt="knjiga nema sliku">
           <div class="text-center">
             <p>Format:</p>
             <p>Broj strana:</p>
@@ -37,10 +41,10 @@ include_once "funkcije.php"
           </div>
         </div>
         <div class="col-md-7">  
-          <h2 class="naslov-knjige">Naslov Knjige</h2>
-          <h3>Autor Knjige</h3>
-          <h4>Kategorija:</h4>
-          <p class="oknjizi">O knjizi</p>
+          <h2 class="naslov-knjige"><?php echo $knjiga["naslov"]?></h2>
+          <h3><?php echo $knjiga["autor"]?></h3>
+          <h4>Kategorija:<?php echo $knjiga["kategorija"]?></h4>
+          <p class="oknjizi"> <?php echo $knjiga["opis"]?></p>
         </div>
         <div class="col-md-3">
           <div class="cena">

@@ -1,6 +1,7 @@
 <?php
 session_start();
-include_once "funkcije.php"
+include_once "funkcije.php";
+$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +20,14 @@ include_once "funkcije.php"
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-  <!-- navigacija -->
-  <?php 
-    isipisHtml("nav");
-    ?>
+<!-- navigacija -->
+  <?php
+    if(isset($_SESSION["administrator"])){
+      if($_SESSION["administrator"]==1){
+        isipisHtml("navadmin");
+      }else isipisHtml("navkupac");
+    }else isipisHtml("nav");
+  ?>
   <!-- telo -->
   <div class="container">
       <div class="page-header">
@@ -32,74 +37,26 @@ include_once "funkcije.php"
         </div>
       <!-- thumbnail 1 -->
     <div class="row">
-        
-      <div class="col-md-12 center-block">
-        <div class="thumbnail">
-          <img src="./img/knjige/aleksandar.jpg" class="img-responsive" alt="...">
-          <div class="caption">
-            <h2 class="text-center text-danger">1.</h2>
-            <h3 class="text-center">Aleksandar od Jugoslavije</h3>
-            <p></p>
-            <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-      <!-- 2 -->
-    <div class="row">
-        <div class=" col-md-6">
+    <?php
+     $sql ="SELECT * FROM `knjiga` ORDER BY br_kupovina DESC LIMIT 5";
+     $rezultat = mysqli_query($db,$sql);
+        while($red = mysqli_fetch_assoc($rezultat)){
+            $autor=$red["autor"];
+            $naslov=$red["naslov"];
+            $putDoSlike=$red["slika"];
+            $id=$red['knjiga_id'];
+            echo ' <div class="col-md-3">
             <div class="thumbnail">
-              <img src="./img/knjige/koreni.jpg" class="img-responsive" alt="Koreni Dobrica Ćosić">
-              <div class="caption">
-                <h2 class="text-center text-danger">2.</h2>
-                <h3 class="text-center">Koreni</h3>
-                <p></p>
-                <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
-              </div>
+            <img src="'.$putDoSlike.'" class="img-responsive center-block">
+            <div class="caption">
+            <h3 class="text-center">'.$naslov.'</h3>
+            <p class="text-center">'.$autor.'</p>
+            <p class="text-center"><a href="./knjiga.php?id='.$id.'" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
             </div>
-          </div>
-        <!-- 3 -->
-          <div class=" col-md-6">
-            <div class="thumbnail">
-              <img src="./img/knjige/zivot.jpg" class="img-responsive" alt="...">
-              <div class="caption">
-                <h2 class="text-center text-danger">3.</h2>
-                <h3 class="text-center">Život bez krpelja</h3>
-                <p></p>
-                <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
-              </div>
             </div>
-          </div>
-    </div>
-    <div class="row">   
-      <!-- 4 -->
-      <div class="col-md-6">
-        <div class="thumbnail">
-          <img src="./img/knjige/covek.jpg"  class="img-responsive" alt="...">
-          <div class="caption">
-            <h2 class="text-center text-danger">4.</h2>
-            <h3 class="text-center">Čovek po imenu Uve</h3>
-            <p></p>
-            <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
-          </div>
-        </div>
-      </div>
-      <!-- 5 -->
-      <div class="col-md-6">
-        <div class="thumbnail">
-          <img src="./img/knjige/molitva.jpg" class="img-responsive" alt="...">
-          <div class="caption">
-            <h2 class="text-center text-danger">5.</h2>
-            <h3 class="text-center">Molitva moru</h3>
-            <p></p>
-            <p class="text-center"><a href="./knjiga.html" class="btn btn-primary" role="button">&nbsp;Više o knjizi&nbsp;</a> <a href="#" class="btn btn-primary" role="button">Dodaj u korpu</a></p>
-          </div>
-        </div>
-      </div>
-      
-    
-    </div>
+            </div>';
+      }
+    ?>
   </div>
 
   <!-- footer -->

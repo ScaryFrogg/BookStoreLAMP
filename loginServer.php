@@ -24,10 +24,9 @@ if (isset($_SESSION["email"])){
     $korisnik = mysqli_fetch_assoc($results);
     if($korisnik){
         $_SESSION["email"]=$email;
-        $_SESSION["success"]="You are logged in";
+        $_SESSION["administrator"]=$korisnik["administrator"];
         header("Location: index.php");
     }else{
         echo "Pogresan email ili sifra";
-    
     }
 }

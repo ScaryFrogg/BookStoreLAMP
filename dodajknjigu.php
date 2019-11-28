@@ -1,16 +1,7 @@
 <?php
 session_start();
-if (!(isset($_SESSION["email"]))&&(!$_SESSION["tip_naloga"]=="administrator")){
+if (!(isset($_SESSION["email"]))||$_SESSION["administrator"]==0){
   header("Location: index.php");
-}
-if(isset($_POST["btn_dodajKnjigu"])){
-  //dodavanje knjige u bazu
-  $putDoSlike = "img/".basename($_FILES["slika"]["name"]);
-  if (move_uploaded_file($_FILES["slika"]["tmp_name"], $putDoSlike)) {
-    echo "The file ". basename( $_FILES["slika"]["name"]). " has been uploaded.";
-  }
-  //preusmeravanje ili neko obavestenje
-
 }
 ?>
 <!DOCTYPE html>
@@ -27,13 +18,13 @@ if(isset($_POST["btn_dodajKnjigu"])){
 <body>
 
   <div class="container knjiga">
-    <div class="row">
+    <div class="row" style="margin-top:10vh">
       <form action=""  enctype="multipart/form-data">
         <div class="col-md-2">
-        <div id="drop" style="height:500px;width:500px">
+        <div id="drop">
+        <img id="slikaZaProveru" src="./img/knjige/bookfiller.png" class="img-responsive center-block" >
           <input  type="file" name="slika" id="fileUploadovan" />
-          <label for="slika"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-          <img src="#" alt="" id="slikaZaProveru">
+          <label for="slika"><strong>Izaberi sliku...</strong><span class="box__dragndrop"> ili je prevucite iznad</span>.</label>
         </div>
           <div class="text-center">
          
@@ -41,7 +32,6 @@ if(isset($_POST["btn_dodajKnjigu"])){
             <label for="format">Format:</label> <input type="text"name="format"id="format">
             <label for="brStrana">Broj strana:</label> <input type="text"name="brStrana"id="brStrana">
             <label for="godIzdanja">Godina izdanja:</label> <input type="text"name="godIzdanja"id="godIzdanja">
-            
           </div>
         </div>
         <div class="col-md-7">  
@@ -60,14 +50,17 @@ if(isset($_POST["btn_dodajKnjigu"])){
             <input type="text" name="cena">
           </div>
         </div>
+      </form>
     </div>
   <div>
   <div class="row">
-  
+    <div class="col-md-5"></div>
+    <div class="col-md-1">
+    <button class="btn btn-primary" id="btn_dodajKnjigu">Dodaj Knjigu</button>
+    </div>
+    <div class="col-md-5"></div>
   </div>
-  </form>
   </div>
-  <button id="btn_dodajKnjigu">Dodaj Knjigu</button>
   </div>
 
   <script src="./js/dragAndDrop.js"></script>

@@ -31,7 +31,6 @@ if($korisnik){
     $ime=$_POST["ime"];
     $prezime=$_POST["prezime"];
     $dodavanje_korisnika_query="INSERT INTO korisnici (email , password , ime , prezime) VALUES ('$email','$password','$ime','$prezime');";
-    $dodavanje_administratora_query="INSERT INTO korisnici (email , password , ime , prezime , administrator) VALUES ('$email','$password','$ime','$prezime',1);";
     mysqli_query($db,$dodavanje_korisnika_query);
     $_SESSION["email"]=$email;
     $_SESSION["success"]="You are logged in";
