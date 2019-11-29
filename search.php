@@ -14,7 +14,8 @@ $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecij
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-
+    <!-- js -->
+    <script src="./js/main.js"></script>
 </head>
 <body>
 <!-- navigacija -->
@@ -47,7 +48,7 @@ $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecij
                         <p class="text-center">'.$autor.'</p>
                         <h3 class="text-center">'.$naslov.'</h3>
 
-                        <p class="text-center"><a href="./listazelja.php"><i class="fas fa-heart fa-2x"></i></a><a href="./korpa.php"><i class="fas fa-shopping-cart fa-2x"></i></a></p>
+                        <p class="text-center"><i data-id="'.$id.'" onclick="dodajUListuZelja(this)" class="fas fa-heart fa-2x"></i><a href="./korpa.php"><i class="fas fa-shopping-cart fa-2x"></i></a></p>
                         <p class="text-center"><a href="./knjiga.php?id='.$id.'" class="btn btn-primary" role="button">Više o knjizi</a></p>
                         </div>
                         </div>

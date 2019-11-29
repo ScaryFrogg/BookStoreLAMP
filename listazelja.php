@@ -1,6 +1,8 @@
 <?php
 session_start();
-include_once "funkcije.php"
+include_once "funkcije.php";
+$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,12 +19,18 @@ include_once "funkcije.php"
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- js -->
+    <script src="./js/main.js"></script>
   </head>
   <body>
   <!-- navigacija -->
-  <?php 
-    isipisHtml("nav");
-    ?>
+  <?php
+  if(isset($_SESSION["administrator"])){
+    if($_SESSION["administrator"]){
+      isipisHtml("navadmin");
+    }else isipisHtml("navkupac");
+  }else isipisHtml("nav");
+  ?>
   <!-- telo -->
 
   <div class="container">
@@ -31,62 +39,43 @@ include_once "funkcije.php"
         Lista želja
       </h1>
     </div>
-      <!-- 1.knjiga -->
-      <div class="row u-listi">
-      <div class="col-md-2">
-      <img src="./img/knjige/putevisvile.jpg" class="slicica"alt="Putevi svile Piter Frankopan">
-      </div>
-      <h3>Putevi svile <small>Piter Frankopan</small> </h3>
-      <p class="col-md-9">Putevi svile nisu bili egzotični niz puteva, nego mreže koje su povezivale kontinente i okeane. Po toj mreži putovale su ideje, roba, bolesti i smrt. Tu su se carstva osvajala – i gubila. Frankopanovo delo, plod dugogodišnjih istraživanja, temeljno menja sliku koju imamo o istoriji sveta. 
-      <a href="./knjiga.html">Pročitaj više...</a>
-      </p>
-      <p class="col-md-1 text-center">1,599 RSD <br>
-          <i class="fas fa-heart fa-2x"></i>
-          <i class="fas fa-shopping-cart fa-2x"></i>
-      </p>
-      </div>
+      <?php
+      if(isset($_SESSION["administrator"])){
+        $id=$_SESSION["korisnik_id"];
+        $sql="SELECT * FROM liste_zelja WHERE korisnik_id=$id;";
+        $rezultat =mysqli_query($db,$sql);
+        if($rezultat){
+          while($knjigaUListi = mysqli_fetch_assoc($rezultat)){
+            $idKnjige=$knjigaUListi["knjiga_id"];
+            $sql_dohvati_knjigu="SELECT `naslov`, `autor`, `slika`, `opis` FROM `knjiga` WHERE knjiga_id=$idKnjige;";
+            $knjiga=mysqli_fetch_assoc(mysqli_query($db,$sql_dohvati_knjigu));
+            $autor=$knjiga["autor"];
+            $naslov=$knjiga["naslov"];
+            $slika=$knjiga["slika"];
+            $opis=$knjiga["opis"];
+            echo ' <div class="row u-listi">
+            <div class="col-md-2">
+            <img src="'.$slika.'" class="slicica"alt="Putevi svile Piter Frankopan">
+            </div>
+            <h3>'.$naslov.' <small>'.$autor.'</small> </h3>
+            <p class="col-md-9">'.$opis.'
+            <a href="./knjiga.php?id='.$idKnjige.'">Pročitaj više...</a>
+            </p>
+            <p class="col-md-1 text-center">cena RSD <br>
+                <i class="fas fa-heart fa-2x" data-id="'.$idKnjige.'" onclick="dodajUListuZelja(this)"></i>
+                <i class="fas fa-shopping-cart fa-2x"></i>
+            </p>
+            </div>';
+            
+          
+          }
+        }  
+      
+      }else echo "Morate biti ulogovani kako bi koristili listu zelja";
+      ?>
 
-      <!-- 2.knjiga -->
-      <div class="row u-listi">
-      <div class="col-md-2">
-      <img src="./img/knjige/agi.jpg" class="slicica"alt="Agi i Ema Igor Kolarov">
-      </div>
-      <h3>Agi i Ema<small>Igor Kolarov</small></h3>
-      <p class="col-md-9">Po ovom poetskom i duhovitom romanu (ovenčanom Nagradom Politikinog Zabavnika za najbolju dečju knjigu) snimljen je prvi srpski film za decu posle dvadeset pet godina pauze, u režiji Milutina Petrovića. Roman je do sada preveden na engleski, ruski, francuski i italijanski jezik, a u Rusiji je za kratko vreme doživeo dva izdanja.
-          <a href="./knjiga.html">Pročitaj više...</a>
-      </p>
-      <p class="col-md-1 text-center" > 699 RSD
-        <br>
-          <i class="fas fa-heart fa-2x "></i>
-          <i class="fas fa-shopping-cart fa-2x"></i>
-      </p>
-      </div>
-    
-      <!-- 3.knjiga -->
-      <div class="row u-listi">
-          <div class="col-md-2">
-          <img src="./img/knjige/veliki juris.jpg" class="slicica"alt="Veliki Juriš Slobodan Vladušić">
-        </div>
-        <h3>Veliki Juriš<small>Slobodan Vladušić</small></h3>
-        <p class="col-md-9">Rano proleće 1916. godine: poručnik srpske vojske Miloš Vojnović oporavlja se na Krfu, u vili Ahileon, od prelaska preko Albanije. Tu upoznaje neobičnu Holanđanku Fani de Grot i postaje očevidac samoubistva srpskog majora koga niko nije oslovljavao po imenu. Napeta potraga za izgubljenim pismom koje je ostalo iza majora, Vojnovića će voditi kroz ulice Krfa, do vrhova Kajmakčalana, a zatim nazad, do solunskih kabarea i Solunskog fronta. Njegova sudbina će se preplitati sa životima Stanislava Krakova, vojvode Vuka, majora Kalafatovića, kao i sa akcijama tajanstvenog bugarskog oficira koga će pratiti u stopu, da bi se, na kraju puta, suočio sa maglom. 
-        <a href="./knjiga.html">Pročitaj više...</a>
-        </p>
-        <p class="col-md-1 text-center">2,000 RSD
-          <br>
-          <i class="fas fa-heart fa-2x"></i>
-          <i class="fas fa-shopping-cart fa-2x"></i>
-        </p>
-      </div>
-    
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+     
 
-          <a class="btn btn-primary center-block " href="./korpa.html">U Korpu</a>
-        </div>
-        <div class="col-md-4"></div>
-      </div>
-  </div>
   <!-- footer -->
   <?php 
     isipisHtml("footer");

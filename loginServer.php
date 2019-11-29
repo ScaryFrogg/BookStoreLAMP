@@ -25,6 +25,7 @@ if (isset($_SESSION["email"])){
     if($korisnik){
         $_SESSION["email"]=$email;
         $_SESSION["administrator"]=$korisnik["administrator"];
+        $_SESSION["korisnik_id"]=$korisnik["korisnik_id"];
         header("Location: index.php");
     }else{
         echo "Pogresan email ili sifra";
