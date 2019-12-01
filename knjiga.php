@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once "funkcije.php";
-$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
 $id=$_GET['id'];
 $sql ="SELECT * FROM knjiga WHERE knjiga_id=$id LIMIT 1";
 $knjiga=mysqli_fetch_assoc(mysqli_query($db,$sql));

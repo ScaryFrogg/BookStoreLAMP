@@ -1,4 +1,14 @@
 <?php 
+
+    //
+    $listazelja="'listazelja'";
+    $korpa="'korpa'";
+
+    //Konekcija sa bazom
+    $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
+
+
+    //Dohvatanje htmla
     function isipisHtml($x){
         $path="./html/$x.html";
         if (file_exists($path)){
@@ -7,7 +17,5 @@
             echo "Fajl nije pronadjen";
         }
     }
-    $nova_knjiga_query = 'INSERT INTO `knjiga`(`naslov`, `autor`, `opis`) VALUES ("[value-0]","[value-1]","[value-2]");' ;
-    $update_knjiga_query ='UPDATE `knjiga` SET `naslov`=[value-0],`autor`=[value-1],`opis`=[value-2] WHERE `id`=[value-3];';
 
 ?> 

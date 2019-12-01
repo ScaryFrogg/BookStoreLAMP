@@ -2,6 +2,7 @@
 session_start();
 if (!(isset($_SESSION["email"]))||$_SESSION["administrator"]==0)
     header("Location: index.php");
+include_once "funkcije.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +20,6 @@ if (!(isset($_SESSION["email"]))||$_SESSION["administrator"]==0)
 <body>
     <table>
     <?php
-    //konekcija na bazu
-    $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
     $pretraga_korisnika_query="SELECT * FROM `korisnici`";
     //$dodavanje_administratora_query="INSERT INTO korisnici (email , password , ime , prezime , administrator) VALUES ('$email','$password','$ime','$prezime',1);";
     $rezultat =mysqli_query($db,$pretraga_korisnika_query);

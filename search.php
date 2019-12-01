@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once "funkcije.php";
-$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,27 +33,27 @@ $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecij
             $sql ="SELECT * FROM `knjiga` WHERE autor LIKE '%$search%' OR naslov LIKE '%$search%' OR kategorija LIKE '%$search%';";
             $rezultat = mysqli_query($db,$sql);
             if(mysqli_num_rows($rezultat)>0){
-                while($red = mysqli_fetch_assoc($rezultat)){
-                    $autor=$red["autor"];
-                    $naslov=$red["naslov"];
-                    $putDoSlike=$red["slika"];
-                    $id=$red['knjiga_id'];
-                    echo '
-                        <div class=" col-lg-3 col-md-3 col-xs-6">
-                        <div class="thumbnail">
-                        <div class="caption">
-                        <img src="'.$putDoSlike.'" class="img-responsive center-block" >
-                
-                        <p class="text-center">'.$autor.'</p>
-                        <h3 class="text-center">'.$naslov.'</h3>
+              while($red = mysqli_fetch_assoc($rezultat)){
+                $autor=$red["autor"];
+                $naslov=$red["naslov"];
+                $putDoSlike=$red["slika"];
+                $id=$red['knjiga_id'];
+                echo '
+                    <div class=" col-lg-3 col-md-3 col-xs-6">
+                    <div class="thumbnail">
+                    <div class="caption">
+                    <img src="'.$putDoSlike.'" class="img-responsive center-block" >
+            
+                    <p class="text-center">'.$autor.'</p>
+                    <h3 class="text-center">'.$naslov.'</h3>
 
-                        <p class="text-center"><i data-id="'.$id.'" onclick="dodajUListuZelja(this)" class="fas fa-heart fa-2x"></i><a href="./korpa.php"><i class="fas fa-shopping-cart fa-2x"></i></a></p>
-                        <p class="text-center"><a href="./knjiga.php?id='.$id.'" class="btn btn-primary" role="button">Više o knjizi</a></p>
-                        </div>
-                        </div>
-                        </div>
-                        ';
-                }
+                    <p class="text-center"><i data-id="'.$id.'" onclick="dodajU('.$listazelja.',this)" class="fas fa-heart fa-2x"></i><i data-id="'.$id.'" onclick="dodajU('.$korpa.',this)" class="fas fa-shopping-cart fa-2x"></i></p>
+                    <p class="text-center"><a href="./knjiga.php?id='.$id.'" class="btn btn-primary" role="button">Više o knjizi</a></p>
+                    </div>
+                    </div>
+                    </div>
+                    ';
+              }
             }else echo "Nije pronadjena ni jedna takva knjiga";
         }else header("Location: index.php");
     ?>

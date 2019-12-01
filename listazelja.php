@@ -1,8 +1,6 @@
 <?php
 session_start();
 include_once "funkcije.php";
-$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +51,8 @@ $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecij
             $naslov=$knjiga["naslov"];
             $slika=$knjiga["slika"];
             $opis=$knjiga["opis"];
-            echo ' <div class="row u-listi">
+            echo ' 
+            <div class="row u-listi">
             <div class="col-md-2">
             <img src="'.$slika.'" class="slicica"alt="Putevi svile Piter Frankopan">
             </div>
@@ -62,12 +61,11 @@ $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecij
             <a href="./knjiga.php?id='.$idKnjige.'">Pročitaj više...</a>
             </p>
             <p class="col-md-1 text-center">cena RSD <br>
-                <i class="fas fa-heart fa-2x" data-id="'.$idKnjige.'" onclick="dodajUListuZelja(this)"></i>
-                <i class="fas fa-shopping-cart fa-2x"></i>
+            <i data-id="'.$idKnjige.'" onclick="dodajU('.$listazelja.',this)" class="fas fa-heart fa-2x" ></i>
+            <i data-id="'.$idKnjige.'" onclick="dodajU('.$korpa.',this)" class="fas fa-shopping-cart fa-2x"></i>
             </p>
             </div>';
             
-          
           }
         }  
       
