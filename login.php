@@ -1,10 +1,8 @@
 <?php
-session_start();
 if (isset($_SESSION["email"])){
   header("Location: index.php");
 }
-
-include_once "funkcije.php"
+include_once "scripts/functions.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +27,7 @@ include_once "funkcije.php"
 <body>
     <!-- navigacija -->
     <?php 
-    isipisHtml("nav");
+    getNavigation();
     ?>
     <!-- telo -->
   <section class="container" style="min-height: 75vh">

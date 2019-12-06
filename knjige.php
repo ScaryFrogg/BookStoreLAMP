@@ -37,7 +37,9 @@ include_once "funkcije.php"
   </h1>
 </div>
 <div class="row">
+
     <?php
+    //TODO
      $sql ="SELECT * FROM `knjiga` LIMIT 20";
      $rezultat = mysqli_query($db,$sql);
         while($red = mysqli_fetch_assoc($rezultat)){
@@ -53,7 +55,7 @@ include_once "funkcije.php"
                 <h3 class="text-center">'.$naslov.'</h3>
                 <p class="text-center">'.$autor.'</p>
       
-                <p class="text-center"><a href="./knjiga.php?id='.$id.'" class="btn btn-primary" role="button">Više o knjizi</a></p>
+                <p class="text-center"><a href="./knjiga.php?id='.$id.'" class="btn btn-primary" role="button">More</a></p>
                 <p class="text-center"><i data-id="'.$id.'" onclick="dodajU('.$listazelja.',this)" class="fas fa-heart fa-2x"></i><i data-id="'.$id.'" onclick="dodajU('.$korpa.',this)" class="fas fa-shopping-cart fa-2x"></i></p>
               </div>
             </div>

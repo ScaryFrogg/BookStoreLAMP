@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once "funkcije.php"
 ?>
 <!DOCTYPE html>
@@ -21,7 +20,7 @@ include_once "funkcije.php"
   <body>
   <!-- navigacija -->
   <?php 
-    isipisHtml("nav");
+    ispisiNavigaciju();
     ?>
   <!-- telo -->
 

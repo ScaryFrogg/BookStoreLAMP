@@ -1,6 +1,5 @@
 <?php
-session_start();
-include_once "funkcije.php";
+include_once "scripts/functions.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,16 +17,12 @@ include_once "funkcije.php";
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- js -->
-    <script src="./js/main.js"></script>
+    <script src="./scripts/main.js"></script>
   </head>
   <body>
   <!-- navigacija -->
   <?php
-  if(isset($_SESSION["administrator"])){
-    if($_SESSION["administrator"]){
-      isipisHtml("navadmin");
-    }else isipisHtml("navkupac");
-  }else isipisHtml("nav");
+    getNavigation();
   ?>
   <!-- telo -->
 
@@ -51,18 +46,18 @@ include_once "funkcije.php";
             $naslov=$knjiga["naslov"];
             $slika=$knjiga["slika"];
             $opis=$knjiga["opis"];
-            echo ' 
+            echo '
             <div class="row u-listi">
             <div class="col-md-2">
             <img src="'.$slika.'" class="slicica"alt="Putevi svile Piter Frankopan">
             </div>
             <h3>'.$naslov.' <small>'.$autor.'</small> </h3>
             <p class="col-md-9">'.$opis.'
-            <a href="./knjiga.php?id='.$idKnjige.'">Pročitaj više...</a>
+            <a href="./book.php?id='.$idKnjige.'">Pročitaj više...</a>
             </p>
             <p class="col-md-1 text-center">cena RSD <br>
-            <i data-id="'.$idKnjige.'" onclick="dodajU('.$listazelja.',this)" class="fas fa-heart fa-2x" ></i>
-            <i data-id="'.$idKnjige.'" onclick="dodajU('.$korpa.',this)" class="fas fa-shopping-cart fa-2x"></i>
+            <i data-id="'.$idKnjige.'" onclick="addToFavorites(this)" class="fas fa-heart fa-2x" ></i>
+            <i data-id="'.$idKnjige.'" onclick="addToCart(this)" class="fas fa-shopping-cart fa-2x"></i>
             </p>
             </div>';
             
@@ -76,7 +71,7 @@ include_once "funkcije.php";
 
   <!-- footer -->
   <?php 
-    isipisHtml("footer");
+    getHtml("footer");
   ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
