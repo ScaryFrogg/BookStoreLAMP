@@ -1,8 +1,7 @@
 <?php
-session_start();
-if (!(isset($_SESSION["email"]))||$_SESSION["administrator"]==0)
+if (!(isset($_SESSION["email"]))||$_SESSION["admin"]==0)
     header("Location: index.php");
-include_once "funkcije.php";
+include_once "functions.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

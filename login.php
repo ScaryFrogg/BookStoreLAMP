@@ -40,14 +40,14 @@ include_once "scripts/functions.php"
       <div class="input-group-addon">
 
         <label for="email">Unesite vaš e-mail:</label>
-        <input class="form-control" type="email" name="email" id="email" required placeholder="primer@mail.com">
+        <input class="form-control" type="email" name="email" id="email" required placeholder="example@mail.com">
         <br>
-        <label for="sifra">Unesite vašu sifru:</label>
-        <input type="password" name="sifra" class="form-control" id="sifra" required>
+        <label for="password">Unesite vašu sifru:</label>
+        <input type="password" name="password" class="form-control" id="password" required>
         <br><br>
-        <button type="submit" name="btn_login" class="btn btn-primary center-block">&nbsp;&nbsp;Uloguj se&nbsp;&nbsp;</button>
+        <button type="submit" name="btn_login" class="btn btn-primary center-block">Log in</button>
         <br>
-        <a class="btn btn-primary" href="./register.php">Kreiraj nalog</a>
+        <a class="btn btn-primary" href="./register.php">Register</a>
         <br>
       </div>
     </form>

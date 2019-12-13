@@ -1,5 +1,5 @@
 <?php
-include_once "funkcije.php"
+include_once "functions.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,7 @@ include_once "funkcije.php"
       </h1>
     </div>
     <?php
-      if(isset($_SESSION["administrator"])){
+      if(isset($_SESSION["admin"])){
         $id=$_SESSION["korisnik_id"];
         $sql="SELECT * FROM korpe WHERE korisnik_id=$id;";
         $rezultat =mysqli_query($db,$sql);

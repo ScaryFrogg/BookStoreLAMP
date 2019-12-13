@@ -1,7 +1,6 @@
 <?php
-session_start();
 if(isset($_SESSION["email"])) header("Location: index.php");
-include_once "funkcije.php"
+include_once "functions.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,5 +1,5 @@
 <?php
-include_once "funkcije.php";
+include_once "functions.php";
 //variable
 $email="";
 

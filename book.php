@@ -1,6 +1,5 @@
 <?php
-session_start();
-include_once "funkcije.php";
+include_once "functions.php";
 $id=$_GET['id'];
 $sql ="SELECT * FROM knjiga WHERE knjiga_id=$id LIMIT 1";
 $knjiga=mysqli_fetch_assoc(mysqli_query($db,$sql));

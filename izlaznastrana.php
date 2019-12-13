@@ -1,6 +1,5 @@
 <?php
-session_start();
-include_once "funkcije.php"
+include_once "functions.php"
 //ako nije dosao sa druge strane ne moze da pristupi ovoj
 ?>
 <!DOCTYPE html>

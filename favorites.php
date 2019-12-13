@@ -8,7 +8,7 @@ include_once "scripts/functions.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bukstor Lista Želja</title>
+    <title>Bukstor Favorites</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,11 +29,11 @@ include_once "scripts/functions.php";
   <div class="container">
     <div class="page-header">
       <h1>
-        Lista želja
+        Favorites
       </h1>
     </div>
       <?php
-      if(isset($_SESSION["administrator"])){
+      if(isset($_SESSION["admin"])){
         $id=$_SESSION["korisnik_id"];
         $sql="SELECT * FROM liste_zelja WHERE korisnik_id=$id;";
         $rezultat =mysqli_query($db,$sql);
@@ -53,9 +53,9 @@ include_once "scripts/functions.php";
             </div>
             <h3>'.$naslov.' <small>'.$autor.'</small> </h3>
             <p class="col-md-9">'.$opis.'
-            <a href="./book.php?id='.$idKnjige.'">Pročitaj više...</a>
+            <a href="./book.php?id='.$idKnjige.'">More...</a>
             </p>
-            <p class="col-md-1 text-center">cena RSD <br>
+            <p class="col-md-1 text-center">Price $ <br>
             <i data-id="'.$idKnjige.'" onclick="addToFavorites(this)" class="fas fa-heart fa-2x" ></i>
             <i data-id="'.$idKnjige.'" onclick="addToCart(this)" class="fas fa-shopping-cart fa-2x"></i>
             </p>
@@ -64,7 +64,7 @@ include_once "scripts/functions.php";
           }
         }  
       
-      }else echo "Morate biti ulogovani kako bi koristili listu zelja";
+      }else echo "You have to be logged in to use this feature";
       ?>
 
      

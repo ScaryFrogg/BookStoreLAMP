@@ -1,50 +1,72 @@
-function addToCart(el){
-    let id=el.getAttribute('data-id');
+function addToCart(el) {
+    let id = el.getAttribute('data-id');
     let form = new FormData();
     let httpr = new XMLHttpRequest();
     httpr.onload = function () {
         alert((this.responseText));
     }
-    
-    form.append("id",id);
+
+    form.append("id", id);
     httpr.open("post", `addToCart.php`);
     httpr.send(form);
 }
-function addToFavorites(el){
-    let id=el.getAttribute('data-id');
+function addToFavorites(el) {
+    let id = el.getAttribute('data-id');
     let form = new FormData();
     let httpr = new XMLHttpRequest();
     httpr.onload = function () {
-        let response =JSON.parse(this.response)
+        let response = JSON.parse(this.response)
         console.log(response)
-        if(!response["logged"]){
-            alert("Please log in to use favorites")
-        }else{
-            if(response["success"]){
+        if (!response["logged"]) {
+            document.body.innerHTML += `
+            <div class="pop-up-wrapper">
+            <div class="pop-up">
+            <form method="POST" action="loginServer.php" class="pop-up-content">
+            <h3 class"text-center center-block">Log in to use this feature</h3>
+
+            <label for="email" class="text-center">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="example@books.com" required>
+
+            <label for="password" class="text-center">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+
+            <button type="submit" name="btn_login" class="btn btn-primary center-block">Log in</button>
+            <button  class="btn btn-primary center-block"><a href="./register.php">Register</a></button>
+            <button onclick="popUpCancle()" class="btn btn-warning center-block">Cancle</button>
+
+            </form>
+            </div>
+            </div>
+            `
+        } else {
+            if (response["success"]) {
                 console.log(el)
                 el.classList.remove("far");
                 el.classList.add("fas");
-            }else{
+            } else {
                 el.classList.add("far");
                 el.classList.remove("fas");
             }
         }
     }
-    
-    form.append("id",id);
+
+    form.append("id", id);
     httpr.open("post", `addToFavorites.php`);
     httpr.send(form);
 }
+function popUpCancle(){
+    document.querySelector(".pop-up-wrapper").outerHTML=""
+}
 
-function ukloniIzKorpe(el){
-    let id=el.getAttribute('data-id');
+function ukloniIzKorpe(el) {
+    let id = el.getAttribute('data-id');
     let form = new FormData();
     let httpr = new XMLHttpRequest();
     httpr.onload = function () {
         alert((this.responseText));
     }
-    
-    form.append("id",id);
+
+    form.append("id", id);
     httpr.open("post", `removeBook.php`);
     httpr.send(form);
 }

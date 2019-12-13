@@ -1,6 +1,5 @@
 <?php
-session_start();
-include_once "funkcije.php"
+include_once "functions.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +22,8 @@ include_once "funkcije.php"
   <body>
   <!-- navigacija -->
   <?php
-  if(isset($_SESSION["administrator"])){
-    if($_SESSION["administrator"]){
+  if(isset($_SESSION["admin"])){
+    if($_SESSION["admin"]){
       isipisHtml("navadmin");
     }else isipisHtml("navkupac");
   }else isipisHtml("nav");

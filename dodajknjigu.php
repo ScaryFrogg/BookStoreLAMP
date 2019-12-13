@@ -1,8 +1,8 @@
 <?php
-if (!(isset($_SESSION["email"]))||$_SESSION["administrator"]==0){
+if (!(isset($_SESSION["email"]))||$_SESSION["admin"]==0){
   header("Location: index.php");
 }
-include 'funkcije.php'
+include 'functions.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">

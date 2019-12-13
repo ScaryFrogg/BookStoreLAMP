@@ -4,30 +4,27 @@ session_start();
 if (isset($_SESSION["email"])){
     header("Location: index.php");
 }else{
-    //Konekcija na bazu
-    $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
-
-    //varijable
+    //Connect to db
+    $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Failed to connect to database");
+    
     $email = mysqli_real_escape_string($db, $_POST["email"]);
-    $sifra = mysqli_real_escape_string($db, $_POST["sifra"]);
-
-    //Validacija forme
-    if(empty($email)){array_push($errors,"Email je obavezan");}
-    if(empty($sifra)){array_push($errors,"Sifra je obavezna");}
+    $password = mysqli_real_escape_string($db, $_POST["password"]);
 
     //hash
-    $password=md5($sifra);
+    $password=md5($password);
 
-    //Provera da li korisnik postoji
+    //Check if user exists
     $email_provera_query="SELECT * FROM korisnici WHERE email ='$email' AND password='$password' LIMIT 1";
     $results =mysqli_query($db,$email_provera_query);
     $korisnik = mysqli_fetch_assoc($results);
     if($korisnik){
+        $id =$korisnik["korisnik_id"];
+        $_SESSION["korisnik_id"]=$id;
         $_SESSION["email"]=$email;
-        $_SESSION["administrator"]=$korisnik["administrator"];
-        $_SESSION["korisnik_id"]=$korisnik["korisnik_id"];
+        $_SESSION["admin"]=$korisnik["administrator"];
+
         header("Location: index.php");
     }else{
-        echo "Pogresan email ili sifra";
+        echo "Wrong email and password combination";
     }
 }

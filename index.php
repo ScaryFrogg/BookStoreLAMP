@@ -1,5 +1,6 @@
 <?php
-include_once "./scripts/functions.php"
+include_once "./scripts/functions.php";
+$favs = (isset($_SESSION["korisnik_id"])) ? $_SESSION["favs"]:array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,12 +49,13 @@ include_once "./scripts/functions.php"
       <h2>Top selling books: </h2>
       <?php
       $sql ="SELECT * FROM `knjiga` ORDER BY br_kupovina DESC LIMIT 4";
-      $rezultat = mysqli_query($db,$sql);
-          while($red = mysqli_fetch_assoc($rezultat)){
+      $result = mysqli_query($db,$sql);
+          while($red = mysqli_fetch_assoc($result)){
               $author=$red["autor"];
               $title=$red["naslov"];
               $img=$red["slika"];
               $id=$red['knjiga_id'];
+              $farORfas=(in_array($id,$favs))?"fas":"far";
               echo ' <div class="col-md-3">
               <div class="thumbnail">
               <img src="'.$img.'" class="img-responsive center-block">
@@ -63,7 +65,7 @@ include_once "./scripts/functions.php"
               <p class="text-center">
               <a href="./book.php?id='.$id.'" class="btn btn-primary" role="button">&nbsp;More&nbsp;</a>
               <br><br>
-              <i data-id="'.$id.'" onclick="addToFavorites(this)" class="far fa-heart fa-2x btn"></i>
+              <i data-id="'.$id.'" onclick="addToFavorites(this)" class="'.$farORfas.' fa-heart fa-2x btn"></i>
               <i data-id="'.$id.'" onclick="addTo('.$cart.',this)" class="fas fa-shopping-cart fa-2x btn"></i>
               </p>
               </div>

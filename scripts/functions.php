@@ -3,10 +3,23 @@
     //variables
     $favorites="'favorites'";
     $cart="'cart'";
-
+    
     //Connection with database
     $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Unable to connect to database.");
 
+    //favorites
+    $favs=array();
+    if (isset($_SESSION["korisnik_id"])){
+        $sqlFavorites="SELECT knjiga_id FROM liste_zelja WHERE korisnik_id=".$_SESSION["korisnik_id"].";";
+        $favResult =mysqli_query($db,$sqlFavorites);
+        if($favResult){
+            while($row=mysqli_fetch_array($favResult)){
+                array_push($favs,$row[0]);
+            }
+        }
+    }
+
+    $_SESSION["favs"]=$favs;
 
     //Get html file and dump on page
     function getHtml($x){
