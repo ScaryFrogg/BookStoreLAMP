@@ -1,8 +1,5 @@
 <?php 
     session_start();
-    //variables
-    $favorites="'favorites'";
-    $cart="'cart'";
     
     //Connection with database
     $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Unable to connect to database.");

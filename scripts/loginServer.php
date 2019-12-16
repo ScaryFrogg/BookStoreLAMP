@@ -2,7 +2,7 @@
 session_start();
 //provera da li je korisnik vec ulogovan
 if (isset($_SESSION["email"])){
-    header("Location: index.php");
+    header("Location: ../index.php");
 }else{
     //Connect to db
     $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Failed to connect to database");
@@ -23,7 +23,7 @@ if (isset($_SESSION["email"])){
         $_SESSION["email"]=$email;
         $_SESSION["admin"]=$korisnik["administrator"];
 
-        header("Location: index.php");
+        header("Location: ../index.php");
     }else{
         echo "Wrong email and password combination";
     }

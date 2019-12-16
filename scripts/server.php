@@ -34,7 +34,7 @@ if($korisnik){
     $_SESSION["email"]=$email;
     $_SESSION["success"]="You are logged in";
     //echo "<br> $dodavanje_korisnika_query";
-    header("Location: index.php");   
+    header("Location: ../index.php");   
 
 }//kraj registracije
 

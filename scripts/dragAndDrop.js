@@ -17,6 +17,7 @@ window.onload = () => {
         let dt = e.dataTransfer
         let files = dt.files
         dodajSliku(files)
+        console.log(files)
 
     })
     //na klik dugmeta
@@ -51,7 +52,7 @@ window.onload = () => {
         let kategorija = document.querySelector('input[name="kategorija"]').value;
         forma.append("kategorija", kategorija);
         
-        httpr.open("post", "dodavanje.php");
+        httpr.open("post", "./scripts/dodavanje.php");
         httpr.send(forma);
     })
 

@@ -7,7 +7,7 @@ function addToCart(el) {
     }
 
     form.append("id", id);
-    httpr.open("post", `addToCart.php`);
+    httpr.open("post", `scripts/addToCart.php`);
     httpr.send(form);
 }
 function addToFavorites(el) {
@@ -21,7 +21,7 @@ function addToFavorites(el) {
             document.body.innerHTML += `
             <div class="pop-up-wrapper">
             <div class="pop-up">
-            <form method="POST" action="loginServer.php" class="pop-up-content">
+            <form method="POST" action="scripts/loginServer.php" class="pop-up-content">
             <h3 class"text-center center-block">Log in to use this feature</h3>
 
             <label for="email" class="text-center">Email</label>
@@ -51,14 +51,14 @@ function addToFavorites(el) {
     }
 
     form.append("id", id);
-    httpr.open("post", `addToFavorites.php`);
+    httpr.open("post", `scripts/addToFavorites.php`);
     httpr.send(form);
 }
 function popUpCancle(){
     document.querySelector(".pop-up-wrapper").outerHTML=""
 }
 
-function ukloniIzKorpe(el) {
+function removeFromCart(el) {
     let id = el.getAttribute('data-id');
     let form = new FormData();
     let httpr = new XMLHttpRequest();
@@ -67,6 +67,6 @@ function ukloniIzKorpe(el) {
     }
 
     form.append("id", id);
-    httpr.open("post", `removeBook.php`);
+    httpr.open("post", `scripts/removeBook.php`);
     httpr.send(form);
 }

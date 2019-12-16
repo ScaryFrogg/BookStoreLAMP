@@ -1,6 +1,6 @@
 <?php
+include_once "scripts/functions.php";
 if(isset($_SESSION["email"])) header("Location: index.php");
-include_once "functions.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ include_once "functions.php"
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Bukstor Registracija</title>
+  <title>Bukstor Register</title>
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,20 +22,20 @@ include_once "functions.php"
 </head>
 
 <body>
-<!-- navigacija -->
+<!-- navigation-->
   <?php 
-  isipisHtml("nav");
+  getNavigation();
   ?>
 <!-- telo -->
   <section class="container" style="min-height: 75vh">
     <div class="page-header">
       <h1>
-        Kreirajte vaš nalog
+        Create account
       </h1>
     </div>
-    <form action="server.php" method="POST" class="center-block">
+    <form action="scripts/server.php" method="POST" class="center-block">
       <div class="input-group-addon">
-        <label for="ime">Unesite vaše ime:</label>
+        <label for="ime">Your name:</label>
         <input type="text" id="ime" name="ime" class="form-control" required placeholder="Ime">
         <label for="prezime">Unesite vaše prezime:</label>
         <input type="text" id="prezime" name="prezime" class="form-control" required placeholder="Prezime">
@@ -64,9 +64,9 @@ include_once "functions.php"
   </section>
   <!-- footer -->
   <?php 
-    isipisHtml("footer");
+    getHtml("footer");
   ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
 </body>
 </html>

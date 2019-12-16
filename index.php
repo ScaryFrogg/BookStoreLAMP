@@ -66,7 +66,7 @@ $favs = (isset($_SESSION["korisnik_id"])) ? $_SESSION["favs"]:array();
               <a href="./book.php?id='.$id.'" class="btn btn-primary" role="button">&nbsp;More&nbsp;</a>
               <br><br>
               <i data-id="'.$id.'" onclick="addToFavorites(this)" class="'.$farORfas.' fa-heart fa-2x btn"></i>
-              <i data-id="'.$id.'" onclick="addTo('.$cart.',this)" class="fas fa-shopping-cart fa-2x btn"></i>
+              <i data-id="'.$id.'" onclick="addToCart(this)" class="fas fa-shopping-cart fa-2x btn"></i>
               </p>
               </div>
               </div>

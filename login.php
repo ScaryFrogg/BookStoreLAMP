@@ -33,16 +33,16 @@ include_once "scripts/functions.php"
   <section class="container" style="min-height: 75vh">
     <div class="page-header">
       <h1>
-        Pristupite vašem nalogu
+        Log in
       </h1>
     </div>
-    <form action="loginServer.php" class="center-block" method="POST">
+    <form action="scripts/loginServer.php" class="center-block" method="POST">
       <div class="input-group-addon">
 
-        <label for="email">Unesite vaš e-mail:</label>
+        <label for="email">Enter e-mail:</label>
         <input class="form-control" type="email" name="email" id="email" required placeholder="example@mail.com">
         <br>
-        <label for="password">Unesite vašu sifru:</label>
+        <label for="password">Enter password:</label>
         <input type="password" name="password" class="form-control" id="password" required>
         <br><br>
         <button type="submit" name="btn_login" class="btn btn-primary center-block">Log in</button>
@@ -54,7 +54,7 @@ include_once "scripts/functions.php"
   </section>
   <!-- footer -->
   <?php 
-    isipisHtml("footer");
+    getHtml("footer");
   ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once "scripts/functions.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,13 +21,13 @@ session_start();
   <body>
    <!-- navigacija -->
    <?php 
-    isipisHtml("nav");
+    getNavigation();
     ?>
     <!-- telo -->
   <div class="container" style="min-height: 75vh">
-      <div class="page-header">
+    <div class="page-header">
       <h1>
-        Često postavljanja pitanja
+        Frequently Asked Questions
       </h1>
     </div>
 
@@ -210,9 +210,9 @@ session_start();
   </div>
   <!-- footer -->
   <?php 
-    isipisHtml("footer");
+    getHtml("footer");
   ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
   </body>
 </html>

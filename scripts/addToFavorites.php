@@ -1,6 +1,6 @@
 <?php
 session_start();
-$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
+$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Failed to connect to database");
 
 $logged=false;
 $success=false;

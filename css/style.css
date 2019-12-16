@@ -72,8 +72,13 @@ a{
     border-top:1px solid silver;
     background-color: #f8f8f8;
 }
-
-/* ikonice */
+/* dropdown */
+@media only screen and (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  }
+/* icons */
 .fa-heart{
     color: red;
     cursor: pointer;
@@ -113,7 +118,7 @@ a{
     color:black;
 }
 
-/* korpa i lista zelja */
+/* cart and favorites */
  .slicica{
     float: left;
     padding-left: 2em;
@@ -155,9 +160,9 @@ form{
 .panel-title{
     font-weight: bold;
 }
-/* knjiga */
+/* book */
 
-.knjiga{
+.book{
     margin-top: 80px;
 }
 .naslov-knjige{
@@ -170,14 +175,20 @@ form{
     font-size: 1.2em;
     text-align: justify;
 }
-.cena{
+.price{
     border: 1px solid #e7e7e7;
-    height:150px;
+    min-height:150px;
     width: 250px;
 }
 /* bagovi */
 .thumbnail{
     min-height: 503px;  /* sprecava da neke knjige budu duze od ostalih;  */ 
+}
+.thumbnail img{
+    max-height:180px !important;
+}
+img{
+    max-height: 270px;
 }
 #glavni-footer div{
     width: 100%;    /* sprecava bug da footer bude siri od ostatka stranice */

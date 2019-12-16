@@ -1,5 +1,6 @@
 <?php
-include_once "functions.php"
+include_once "scripts/functions.php";
+$favs = (isset($_SESSION["korisnik_id"])) ? $_SESSION["favs"]:array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,56 +18,54 @@ include_once "functions.php"
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- js -->
-    <script src="./js/main.js"></script>
+    <script src="./scripts/main.js"></script>
   </head>
   <body>
-  <!-- navigacija -->
-  <?php
-  if(isset($_SESSION["admin"])){
-    if($_SESSION["admin"]){
-      isipisHtml("navadmin");
-    }else isipisHtml("navkupac");
-  }else isipisHtml("nav");
+  <!-- navigation -->
+  <?php 
+  getNavigation();
   ?>
-  <!-- telo -->
+  <!-- body -->
 <div class="container">
 <div class="page-header">
   <h1>
-    Knjige
+    Books
   </h1>
 </div>
 <div class="row">
 
-    <?php
-    //TODO
-     $sql ="SELECT * FROM `knjiga` LIMIT 20";
-     $rezultat = mysqli_query($db,$sql);
-        while($red = mysqli_fetch_assoc($rezultat)){
-            $autor=$red["autor"];
-            $naslov=$red["naslov"];
-            $putDoSlike=$red["slika"];
-            $id=$red['knjiga_id'];
-            echo ' 
-            <div class=" col-lg-3 col-md-4 col-xs-6">
-            <div class="thumbnail">
-              <img src="'.$putDoSlike.'" class="img-responsive" alt='.$naslov.' '.$autor.'">
-              <div class="caption">
-                <h3 class="text-center">'.$naslov.'</h3>
-                <p class="text-center">'.$autor.'</p>
-      
-                <p class="text-center"><a href="./knjiga.php?id='.$id.'" class="btn btn-primary" role="button">More</a></p>
-                <p class="text-center"><i data-id="'.$id.'" onclick="dodajU('.$listazelja.',this)" class="fas fa-heart fa-2x"></i><i data-id="'.$id.'" onclick="dodajU('.$korpa.',this)" class="fas fa-shopping-cart fa-2x"></i></p>
-              </div>
+  <?php
+  //TODO
+    $sql ="SELECT * FROM `knjiga` LIMIT 20";
+    $result = mysqli_query($db,$sql);
+      while($row = mysqli_fetch_assoc($result)){
+          $author=$row["autor"];
+          $title=$row["naslov"];
+          $imgPath=$row["slika"];
+          $id=$row['knjiga_id'];
+          $farORfas=(in_array($id,$favs))?"fas":"far";
+          echo ' 
+          <div class=" col-lg-3 col-md-4 col-xs-6">
+          <div class="thumbnail">
+            <img src="'.$imgPath.'" class="img-responsive" alt='.$title.' '.$author.'">
+            <div class="caption">
+              <h3 class="text-center">'.$title.'</h3>
+              <p class="text-center">'.$author.'</p>
+    
+              <p class="text-center"><a href="./book.php?id='.$id.'" class="btn btn-primary" role="button">More</a></p>
+              <p class="text-center"><i data-id="'.$id.'" onclick="addToFavorites(this)" class="'.$farORfas.' fa-heart fa-2x"></i>
+              <i data-id="'.$id.'" onclick="addToCart(this)" class="fas fa-shopping-cart fa-2x"></i></p>
             </div>
           </div>
-          ';
-      }
-    ?>
+        </div>
+        ';
+    }
+  ?>
   </div>
 </div>
   <!-- footer -->
   <?php 
-    isipisHtml("footer");
+    getHtml("footer");
   ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
