@@ -35,13 +35,13 @@ if(isset($_SESSION["email"])) header("Location: index.php");
     </div>
     <form action="scripts/server.php" method="POST" class="center-block">
       <div class="input-group-addon">
-        <label for="ime">Your name:</label>
-        <input type="text" id="ime" name="ime" class="form-control" required placeholder="Ime">
-        <label for="prezime">Unesite vaše prezime:</label>
-        <input type="text" id="prezime" name="prezime" class="form-control" required placeholder="Prezime">
+        <label for="name">Your name:</label>
+        <input type="text" id="name" name="name" class="form-control" required placeholder="name">
+        <label for="last_name">Unesite vaše last_name:</label>
+        <input type="text" id="last_name" name="last_name" class="form-control" required placeholder="last_name">
         <br>
         <label for="email">Unesite vaš e-mail:</label>
-        <input class="form-control" type="email" id="email" name="email" required placeholder="primer@mail.com">
+        <input class="form-control" type="email" id="email" name="email" required placeholder="prnamer@mail.com">
         <br>
         <label for="sifra">Kreirajte šifru:</label>
         <input type="password" class="form-control" id="sifra" name="sifra1" required>

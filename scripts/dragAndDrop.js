@@ -1,6 +1,6 @@
 //dodaj proveru za fajl
 window.onload = () => {
-    let forma = new FormData()
+    let form = new FormData()
     let httpr = new XMLHttpRequest()
     let dropArea = document.querySelector('#drop')
 
@@ -16,25 +16,25 @@ window.onload = () => {
         e.stopPropagation();
         let dt = e.dataTransfer
         let files = dt.files
-        dodajSliku(files)
+        addImage(files)
         console.log(files)
 
     })
-    //na klik dugmeta
-    document.querySelector("input[name='slika']").addEventListener('change', function (e) {
-        dodajSliku(this.files)
+    //on click upload
+    document.querySelector("input[name='img_src']").addEventListener('change', function (e) {
+        addImage(this.files)
     })
 
-    function dodajSliku(files) {
-        let placeholderSlika = document.querySelector('#slikaZaProveru')
+    function addImage(files) {
+        let placeholderimg_src = document.querySelector('#img_srcZaProveru')
         if (files[0]) {
             var reader = new FileReader(files[0]);
             reader.onload = function (e) {
-                placeholderSlika.setAttribute("src", e.target.result);
+                placeholderimg_src.setAttribute("src", e.target.result);
                 dropArea.innerHTML += '<p>' + files[0].name + '</p>';
             };
             reader.readAsDataURL(files[0])
-            forma.append("file", files[0])
+            form.append("file", files[0])
         }
     }
 
@@ -43,17 +43,17 @@ window.onload = () => {
         httpr.onload = function () {
             console.log(this.responseText);
         }
-        let naslov = document.querySelector('input[name="naslov"]').value;
-        forma.append("naslov", naslov);
-        let autor = document.querySelector('input[name="autor"]').value;
-        forma.append("autor", autor);
-        let opis = document.querySelector('textarea[name="opis"]').value;
-        forma.append("opis", opis);
-        let kategorija = document.querySelector('input[name="kategorija"]').value;
-        forma.append("kategorija", kategorija);
+        let title = document.querySelector('input[name="title"]').value;
+        form.append("title", title);
+        let author = document.querySelector('input[name="author"]').value;
+        form.append("author", author);
+        let about = document.querySelector('textarea[name="about"]').value;
+        form.append("about", about);
+        let categories = document.querySelector('input[name="categories"]').value;
+        form.append("categories", categories);
         
         httpr.open("post", "./scripts/dodavanje.php");
-        httpr.send(forma);
+        httpr.send(form);
     })
 
 }

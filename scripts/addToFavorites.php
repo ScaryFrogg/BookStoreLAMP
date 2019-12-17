@@ -1,18 +1,18 @@
 <?php
 session_start();
-$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Failed to connect to database");
+$db=mysqli_connect('localhost','id11968293_scaryfrogg','sifrazadb','id11968293_mrzim_php') or die("Unable to connect to database.");
 
 $logged=false;
 $success=false;
 //provera da li je korisnik ulogovan
-if(isset($_SESSION["korisnik_id"])){
+if(isset($_SESSION["user_id"])){
     $logged=true;
-    $korisnikId=$_SESSION["korisnik_id"];
-    $knjigaId=$_POST["id"];
+    $korisnikId=$_SESSION["user_id"];
+    $booksId=$_POST["id"];
 
-    $sql_dodaj="INSERT INTO `liste_zelja`(`knjiga_id`, `korisnik_id`, `kolicina`) VALUES ($knjigaId,$korisnikId,1)";
-    $sql_provera="SELECT `knjiga_id`, `korisnik_id` FROM `liste_zelja` WHERE knjiga_id=$knjigaId AND korisnik_id=$korisnikId";
-    $sql_ukloni="DELETE FROM `liste_zelja` WHERE knjiga_id=$knjigaId AND korisnik_id=$korisnikId";
+    $sql_dodaj="INSERT INTO `favorites`(`book_id`, `user_id`, `quantity`) VALUES ($booksId,$korisnikId,1)";
+    $sql_provera="SELECT `book_id`, `user_id` FROM `favorites` WHERE book_id=$booksId AND user_id=$korisnikId";
+    $sql_ukloni="DELETE FROM `favorites` WHERE book_id=$booksId AND user_id=$korisnikId";
     $provera=mysqli_fetch_assoc(mysqli_query($db,$sql_provera));
 
     if($provera>0){

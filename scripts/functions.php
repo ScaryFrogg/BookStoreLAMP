@@ -2,12 +2,12 @@
     session_start();
     
     //Connection with database
-    $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Unable to connect to database.");
+    $db=mysqli_connect('localhost','id11968293_scaryfrogg','sifrazadb','id11968293_mrzim_php') or die("Unable to connect to database.");
 
     //favorites
     $favs=array();
-    if (isset($_SESSION["korisnik_id"])){
-        $sqlFavorites="SELECT knjiga_id FROM liste_zelja WHERE korisnik_id=".$_SESSION["korisnik_id"].";";
+    if (isset($_SESSION["user_id"])){
+        $sqlFavorites="SELECT book_id FROM favorites WHERE user_id=".$_SESSION["user_id"].";";
         $favResult =mysqli_query($db,$sqlFavorites);
         if($favResult){
             while($row=mysqli_fetch_array($favResult)){
@@ -38,7 +38,7 @@
 
     //Check if user has that book in favorites
     function checkFavorites($userID,$bookID){
-        $sql_check_favorites="SELECT * FROM `liste_zelja` WHERE `knjiga_id`=$userID AND `korisnik_id`=$bookID ";
+        $sql_check_favorites="SELECT * FROM `favorites` WHERE `book_id`=$userID AND `user_id`=$bookID ";
         $result = mysqli_query($db,$sql_check_favorites);
         if(mysqli_num_rows($result)>0){
             return true;

@@ -1,6 +1,6 @@
 <?php
 include_once "scripts/functions.php";
-$favs = (isset($_SESSION["korisnik_id"])) ? $_SESSION["favs"]:array();
+$favs = (isset($_SESSION["user_id"])) ? $_SESSION["favs"]:array();
 $search= (!isset($_GET['search'])||$_GET['search']=="") ? "": mysqli_real_escape_string($db,$_GET['search']);
 ?>
 <!DOCTYPE html>
@@ -33,14 +33,14 @@ $search= (!isset($_GET['search'])||$_GET['search']=="") ? "": mysqli_real_escape
       </h1>
     </div>
     <?php
-      $sql ="SELECT * FROM `knjiga` WHERE autor LIKE '%$search%' OR naslov LIKE '%$search%' OR kategorija LIKE '%$search%';";
+      $sql ="SELECT * FROM `books` WHERE author LIKE '%$search%' OR title LIKE '%$search%' OR categories LIKE '%$search%';";
       $result = mysqli_query($db,$sql);
       if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_assoc($result)){
-          $author=$row["autor"];
-          $title=$row["naslov"];
-          $imgPath=$row["slika"];
-          $id=$row['knjiga_id'];
+          $author=$row["author"];
+          $title=$row["title"];
+          $imgPath=$row["img_src"];
+          $id=$row['book_id'];
           $farORfas=(in_array($id,$favs))?"fas":"far";
           echo '
               <div class=" col-lg-3 col-md-3 col-xs-6">
@@ -67,6 +67,6 @@ $search= (!isset($_GET['search'])||$_GET['search']=="") ? "": mysqli_real_escape
     getHtml("footer");
   ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
 </body>
 </html>

@@ -143,7 +143,7 @@ a{
 .separator{
     min-height: 50px;
 }
-.ukupno{
+.total{
     color: crimson;
 }
 /* forme */
@@ -165,7 +165,7 @@ form{
 .book{
     margin-top: 80px;
 }
-.naslov-knjige{
+.title-knjige{
     color: crimson;
     margin-top: 0;
 }

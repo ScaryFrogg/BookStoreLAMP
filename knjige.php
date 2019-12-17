@@ -1,6 +1,6 @@
 <?php
 include_once "scripts/functions.php";
-$favs = (isset($_SESSION["korisnik_id"])) ? $_SESSION["favs"]:array();
+$favs = (isset($_SESSION["user_id"])) ? $_SESSION["favs"]:array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,13 +36,13 @@ $favs = (isset($_SESSION["korisnik_id"])) ? $_SESSION["favs"]:array();
 
   <?php
   //TODO
-    $sql ="SELECT * FROM `knjiga` LIMIT 20";
+    $sql ="SELECT * FROM `books` LIMIT 20";
     $result = mysqli_query($db,$sql);
       while($row = mysqli_fetch_assoc($result)){
-          $author=$row["autor"];
-          $title=$row["naslov"];
-          $imgPath=$row["slika"];
-          $id=$row['knjiga_id'];
+          $author=$row["author"];
+          $title=$row["title"];
+          $imgPath=$row["img_src"];
+          $id=$row['book_id'];
           $farORfas=(in_array($id,$favs))?"fas":"far";
           echo ' 
           <div class=" col-lg-3 col-md-4 col-xs-6">
@@ -68,6 +68,6 @@ $favs = (isset($_SESSION["korisnik_id"])) ? $_SESSION["favs"]:array();
     getHtml("footer");
   ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 include_once "scripts/functions.php";
 $id=$_GET['id'];
-$sql ="SELECT * FROM knjiga WHERE knjiga_id=$id LIMIT 1";
+$sql ="SELECT * FROM books WHERE book_id=$id LIMIT 1";
 $book=mysqli_fetch_assoc(mysqli_query($db,$sql));
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ $book=mysqli_fetch_assoc(mysqli_query($db,$sql));
     <div class="container book">
       <div class="row">
         <div class="col-md-3">
-          <img src="<?php echo $book["slika"]?>" class="img-responsive center-block" alt="">
+          <img src="<?php echo $book["img_src"]?>" class="img-responsive center-block" alt="">
           <div class="text-center">
             <p>Format:</p>
             <p>Published:</p>
@@ -36,10 +36,10 @@ $book=mysqli_fetch_assoc(mysqli_query($db,$sql));
           </div>
         </div>
         <div class="col-md-7">  
-          <h2 class="naslov-knjige"><?php echo $book["naslov"]?></h2>
-          <h3><?php echo $book["autor"]?></h3>
-          <h4>Categories:<?php echo $book["kategorija"]?></h4>
-          <p class="oknjizi"> <?php echo $book["opis"]?></p>
+          <h2 class="title-knjige"><?php echo $book["title"]?></h2>
+          <h3><?php echo $book["author"]?></h3>
+          <h4>Categories:<?php echo $book["categories"]?></h4>
+          <p class="oknjizi"> <?php echo $book["about"]?></p>
         </div>
         <div class="col-md-2">
           <div class="price">

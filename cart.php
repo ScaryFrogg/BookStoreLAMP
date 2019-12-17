@@ -17,7 +17,7 @@ include_once "scripts/functions.php"
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- js -->
-    <script src="./js/main.js"></script>
+    <script src="./scripts/main.js"></script>
   </head>
   <body>
   
@@ -35,18 +35,18 @@ include_once "scripts/functions.php"
     </div>
     <?php
       if(isset($_SESSION["admin"])){
-        $id=$_SESSION["korisnik_id"];
-        $sql="SELECT * FROM korpe WHERE korisnik_id=$id;";
+        $id=$_SESSION["user_id"];
+        $sql="SELECT * FROM shopping_carts WHERE user_id=$id;";
         $result =mysqli_query($db,$sql);
         if($result->{"num_rows"}!=0){
           while($bookFromList = mysqli_fetch_assoc($result)){
-            $bookId=$bookFromList["knjiga_id"];
-            $sql_get_book="SELECT `naslov`, `autor`, `slika`, `opis` FROM `knjiga` WHERE knjiga_id=$bookId;";
+            $bookId=$bookFromList["book_id"];
+            $sql_get_book="SELECT `title`, `author`, `img_src`, `about` FROM `books` WHERE book_id=$bookId;";
             $book=mysqli_fetch_assoc(mysqli_query($db,$sql_get_book));
-            $author=$book["autor"];
-            $title=$book["naslov"];
-            $imgPath=$book["slika"];
-            $about=$book["opis"];
+            $author=$book["author"];
+            $title=$book["title"];
+            $imgPath=$book["img_src"];
+            $about=$book["about"];
             echo ' <div class="row u-listi">
             <div class="col-md-2">
             <img src="'.$imgPath.'" class="slicica"alt="Putevi svile Piter Frankopan">
@@ -55,8 +55,8 @@ include_once "scripts/functions.php"
             <p class="col-md-9">'.$about.'
             <a href="./book.php?id='.$bookId.'">Pročitaj više...</a>
             </p>
-            <p class="col-md-1 text-center">1,599 RSD <br>
-              <i data-id="'.$bookId.'" onclick="removeFromCart(this)" class="fas fa-trash-alt fa-2x"></i>
+            <p class="col-md-1 text-center">1.599 RSD <br>
+              <i data-id="'.$bookId.'" onclick="removeFromCartAndDelete(this)" class="fas fa-trash-alt fa-2x"></i>
             </p>
             </div>';
             
@@ -64,7 +64,7 @@ include_once "scripts/functions.php"
           echo '
           <div class="row">
           <div class="col-md-4 col-md-offset-4">
-          <h3 class="text-center ukupno">Ukupno: <span>TODO SABERI</span></h3>
+          <h3 class="text-center total">Total: <span id="total"></span></h3>
           <button role="button" class="btn btn-primary  center-block">Check out</button>
           </p>
           </div>
@@ -80,5 +80,6 @@ include_once "scripts/functions.php"
   ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/shoppingCart.js"></script>
 </body>
 </html>

@@ -30,8 +30,8 @@ if (!(isset($_SESSION["admin"]))||$_SESSION["admin"]==0){
     <div class="row" style="margin-top:5vh" >
         <div class="col-md-3">
         <div id="drop">
-        <img id="slikaZaProveru" src="./img/knjige/bookfiller.png" class="img-responsive center-block" >
-          <input  type="file" name="slika" id="fileUploadovan" accept="image/png, image/jpeg, image/jpg" style="visibility: hidden;"/>
+        <img id="img_srcZaProveru" src="./img/knjige/bookfiller.png" class="img-responsive center-block" >
+          <input  type="file" name="img_src" id="fileUploadovan" accept="image/png, image/jpeg, image/jpg" style="visibility: hidden;"/>
           <label class="btn btn-primary" id="fileUploadovanLable" for="fileUploadovan" style="white-space:normal" >Click to choose image or drag it above. (JPG, JPEG, PNG)</label>
         </div>
           <div class="text-center">
@@ -42,14 +42,14 @@ if (!(isset($_SESSION["admin"]))||$_SESSION["admin"]==0){
           </div>
         </div>
         <div class="col-md-7">  
-          <h2 class="naslov-knjige">Title</h2>
-          <input type="text" name="naslov">
+          <h2 class="title-knjige">Title</h2>
+          <input type="text" name="title">
           <h3>Author</h3>
-          <input type="text" name="autor">
+          <input type="text" name="author">
           <h4>Categories:</h4>
-          <input type="text" name="kategorija">
+          <input type="text" name="categories">
           <p class="oknjizi">About the book</p>
-          <textarea name="opis" cols="70" rows="10"></textarea>
+          <textarea name="about" cols="70" rows="10"></textarea>
         </div>
         <div class="col-md-2">
           <div class="price">

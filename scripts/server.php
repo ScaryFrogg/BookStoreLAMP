@@ -27,9 +27,9 @@ if($korisnik){
 }else{
     // Registracija korisnika 
     $password=md5($sifra1);
-    $ime=$_POST["ime"];
-    $prezime=$_POST["prezime"];
-    $dodavanje_korisnika_query="INSERT INTO korisnici (email , password , ime , prezime) VALUES ('$email','$password','$ime','$prezime');";
+    $name=$_POST["name"];
+    $last_name=$_POST["last_name"];
+    $dodavanje_korisnika_query="INSERT INTO korisnici (email , password , name , last_name) VALUES ('$email','$password','$name','$last_name');";
     mysqli_query($db,$dodavanje_korisnika_query);
     $_SESSION["email"]=$email;
     $_SESSION["success"]="You are logged in";

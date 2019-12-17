@@ -98,7 +98,7 @@ include_once "scripts/functions.php"
           </div>
           <div id="collapseCetvrti" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCetvrti">
             <div class="panel-body">
-                Logujete se pritiskom na "Prijava" - poterebno je samo da unesete svoje korisničko ime i lozinku koji ste prilikom registracije dobili na mejl.
+                Logujete se pritiskom na "Prijava" - poterebno je samo da unesete svoje korisničko name i lozinku koji ste prilikom registracije dobili na mejl.
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@ include_once "scripts/functions.php"
           </div>
           <div id="collapseOsmi" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOsmi">
             <div class="panel-body">
-                Kupovina je sigurna. Svi podaci o kupovini vidljivi su samo administratoru. Podaci o Vašoj platnoj kartici biće šifrirani i dostupni samo banci koja obavlja transakciju.
+                Kupovina je sigurna. Svi podaci o kupovini vidljivi su samo adminu. Podaci o Vašoj platnoj kartici biće šifrirani i dostupni samo banci koja obavlja transakciju.
             </div>
           </div>
         </div>

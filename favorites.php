@@ -33,18 +33,18 @@ include_once "scripts/functions.php";
   </div>
     <?php
     if(isset($_SESSION["admin"])){
-      $id=$_SESSION["korisnik_id"];
-      $sql="SELECT * FROM liste_zelja WHERE korisnik_id=$id;";
+      $id=$_SESSION["user_id"];
+      $sql="SELECT * FROM favorites WHERE user_id=$id;";
       $result =mysqli_query($db,$sql);
       if($result->{"num_rows"}!=0){
         while($bookFromList = mysqli_fetch_assoc($result)){
-          $idKnjige=$bookFromList["knjiga_id"];
-          $sql_dohvati_knjigu="SELECT `naslov`, `autor`, `slika`, `opis` FROM `knjiga` WHERE knjiga_id=$idKnjige;";
+          $idKnjige=$bookFromList["book_id"];
+          $sql_dohvati_knjigu="SELECT `title`, `author`, `img_src`, `about` FROM `books` WHERE book_id=$idKnjige;";
           $book=mysqli_fetch_assoc(mysqli_query($db,$sql_dohvati_knjigu));
-          $author=$book["autor"];
-          $title=$book["naslov"];
-          $imgPath=$book["slika"];
-          $about=$book["opis"];
+          $author=$book["author"];
+          $title=$book["title"];
+          $imgPath=$book["img_src"];
+          $about=$book["about"];
           echo '
           <div class="row u-listi">
           <div class="col-md-2">

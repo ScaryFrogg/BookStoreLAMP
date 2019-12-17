@@ -1,6 +1,6 @@
 <?php
 include_once "./scripts/functions.php";
-$favs = (isset($_SESSION["korisnik_id"])) ? $_SESSION["favs"]:array();
+$favs = (isset($_SESSION["user_id"])) ? $_SESSION["favs"]:array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,13 +48,13 @@ $favs = (isset($_SESSION["korisnik_id"])) ? $_SESSION["favs"]:array();
     <div class="row">
       <h2>Top selling books: </h2>
       <?php
-      $sql ="SELECT * FROM `knjiga` ORDER BY br_kupovina DESC LIMIT 4";
+      $sql ="SELECT * FROM `books` ORDER BY purchuses DESC LIMIT 4";
       $result = mysqli_query($db,$sql);
           while($red = mysqli_fetch_assoc($result)){
-              $author=$red["autor"];
-              $title=$red["naslov"];
-              $img=$red["slika"];
-              $id=$red['knjiga_id'];
+              $author=$red["author"];
+              $title=$red["title"];
+              $img=$red["img_src"];
+              $id=$red['book_id'];
               $farORfas=(in_array($id,$favs))?"fas":"far";
               echo ' <div class="col-md-3">
               <div class="thumbnail">
