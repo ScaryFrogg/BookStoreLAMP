@@ -7,7 +7,7 @@
     //favorites
     $favs=array();
     if (isset($_SESSION["user_id"])){
-        $sqlFavorites="SELECT book_id FROM favorites WHERE user_id=".$_SESSION["user_id"].";";
+        $sqlFavorites="SELECT book_id FROM favorites WHERE `user_id`=".$_SESSION["user_id"].";";
         $favResult =mysqli_query($db,$sqlFavorites);
         if($favResult){
             while($row=mysqli_fetch_array($favResult)){

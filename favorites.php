@@ -34,12 +34,12 @@ include_once "scripts/functions.php";
     <?php
     if(isset($_SESSION["admin"])){
       $id=$_SESSION["user_id"];
-      $sql="SELECT * FROM favorites WHERE user_id=$id;";
+      $sql="SELECT * FROM favorites WHERE `user_id`=$id;";
       $result =mysqli_query($db,$sql);
       if($result->{"num_rows"}!=0){
         while($bookFromList = mysqli_fetch_assoc($result)){
-          $idKnjige=$bookFromList["book_id"];
-          $sql_dohvati_knjigu="SELECT `title`, `author`, `img_src`, `about` FROM `books` WHERE book_id=$idKnjige;";
+          $bookId=$bookFromList["book_id"];
+          $sql_dohvati_knjigu="SELECT `title`, `author`, `img_src`, `about` FROM `books` WHERE book_id=$bookId;";
           $book=mysqli_fetch_assoc(mysqli_query($db,$sql_dohvati_knjigu));
           $author=$book["author"];
           $title=$book["title"];
@@ -52,11 +52,11 @@ include_once "scripts/functions.php";
           </div>
           <h3>'.$title.' <small>'.$author.'</small> </h3>
           <p class="col-md-9">'.$about.'
-          <a href="./book.php?id='.$idKnjige.'">More...</a>
+          <a href="./book.php?id='.$bookId.'">More...</a>
           </p>
           <p class="col-md-1 text-center">Price $ <br>
-          <i data-id="'.$idKnjige.'" onclick="addToFavorites(this)" class="fas fa-heart fa-2x" ></i>
-          <i data-id="'.$idKnjige.'" onclick="addToCart(this)" class="fas fa-shopping-cart fa-2x"></i>
+          <i data-id="'.$bookId.'" onclick="addToFavorites(this)" class="fas fa-heart fa-2x" ></i>
+          <i data-id="'.$bookId.'" onclick="addToCart(this)" class="fas fa-shopping-cart fa-2x"></i>
           </p>
           </div>';
         }

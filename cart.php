@@ -36,7 +36,7 @@ include_once "scripts/functions.php"
     <?php
       if(isset($_SESSION["admin"])){
         $id=$_SESSION["user_id"];
-        $sql="SELECT * FROM shopping_carts WHERE user_id=$id;";
+        $sql="SELECT * FROM shopping_carts WHERE `user_id`=$id;";
         $result =mysqli_query($db,$sql);
         if($result->{"num_rows"}!=0){
           while($bookFromList = mysqli_fetch_assoc($result)){

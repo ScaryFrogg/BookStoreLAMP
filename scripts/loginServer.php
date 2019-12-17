@@ -14,7 +14,7 @@ if (isset($_SESSION["email"])){
     $password=md5($password);
 
     //Check if user exists
-    $email_provera_query="SELECT * FROM korisnici WHERE email ='$email' AND password='$password' LIMIT 1";
+    $email_provera_query="SELECT * FROM users WHERE email ='$email' AND password='$password' LIMIT 1";
     $results =mysqli_query($db,$email_provera_query);
     $user = mysqli_fetch_assoc($results);
     if($user){

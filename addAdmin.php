@@ -45,7 +45,7 @@ if ((!isset($_SESSION["email"]))||$_SESSION["admin"]==0)
     <thead><th>First Name</th>
     <th>Last Name</th><th>Email</th><th>Type</th> </thead>
     <?php
-    $pretraga_korisnika_query="SELECT * FROM `korisnici`";
+    $pretraga_korisnika_query="SELECT * FROM `users`";
     $rezultat =mysqli_query($db,$pretraga_korisnika_query);
     while($users = mysqli_fetch_assoc($rezultat)){
         echo '<tr>';

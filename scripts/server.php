@@ -19,7 +19,7 @@ if(empty($sifra1)){array_push($errors,"Sifra je obavezna");}
 if($sifra1!=$sifra2){array_push($errors,"Sifre moraju da se poklapaju");}
 
 //provera da li email vec postoji
-$email_provera_query="SELECT * FROM korisnici WHERE email ='$email' LIMIT 1";
+$email_provera_query="SELECT * FROM users WHERE email ='$email' LIMIT 1";
 $results =mysqli_query($db,$email_provera_query);
 $korisnik = mysqli_fetch_assoc($results);
 if($korisnik){
@@ -29,7 +29,7 @@ if($korisnik){
     $password=md5($sifra1);
     $name=$_POST["name"];
     $last_name=$_POST["last_name"];
-    $dodavanje_korisnika_query="INSERT INTO korisnici (email , password , name , last_name) VALUES ('$email','$password','$name','$last_name');";
+    $dodavanje_korisnika_query="INSERT INTO users (email , password , name , last_name) VALUES ('$email','$password','$name','$last_name');";
     mysqli_query($db,$dodavanje_korisnika_query);
     $_SESSION["email"]=$email;
     $_SESSION["success"]="You are logged in";

@@ -10,7 +10,7 @@ if(isset($_SESSION["user_id"])){
     $bookId=$_POST["id"];
 
     $sql_add="INSERT INTO `shopping_carts`(`book_id`, `user_id`, `quantity`) VALUES ($bookId,$userId,1)";
-    $sql_check="SELECT `book_id`, `user_id` FROM `shopping_carts` WHERE book_id=$bookId AND user_id=$userId";
+    $sql_check="SELECT `book_id`, `user_id` FROM `shopping_carts` WHERE book_id=$bookId AND `user_id`=$userId";
     $provera=mysqli_fetch_assoc(mysqli_query($db,$sql_check));
     mysqli_query($db,$sql_add);
 
