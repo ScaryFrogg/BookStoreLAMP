@@ -5,7 +5,7 @@ if (isset($_SESSION["email"])){
     header("Location: ../index.php");
 }else{
     //Connect to db
-    $db=mysqli_connect('localhost','id11968293_scaryfrogg','sifrazadb','id11968293_mrzim_php') or die("Unable to connect to database.");
+    $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Unable to connect to database.");
     
     $email = mysqli_real_escape_string($db, $_POST["email"]);
     $password = mysqli_real_escape_string($db, $_POST["password"]);

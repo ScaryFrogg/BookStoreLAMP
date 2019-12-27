@@ -35,29 +35,27 @@ if(isset($_SESSION["email"])) header("Location: index.php");
     </div>
     <form action="scripts/server.php" method="POST" class="center-block">
       <div class="input-group-addon">
-        <label for="name">Your name:</label>
-        <input type="text" id="name" name="name" class="form-control" required placeholder="name">
-        <label for="last_name">Unesite vaše last_name:</label>
-        <input type="text" id="last_name" name="last_name" class="form-control" required placeholder="last_name">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" class="form-control" required placeholder="Jane">
+        <label for="last_name">Enter your last name:</label>
+        <input type="text" id="last_name" name="last_name" class="form-control" required placeholder="Doe">
         <br>
-        <label for="email">Unesite vaš e-mail:</label>
-        <input class="form-control" type="email" id="email" name="email" required placeholder="prnamer@mail.com">
+        <label for="email">Enter your e-mail:</label>
+        <input class="form-control" type="email" id="email" name="email" required placeholder="jande.doe@mail.com">
         <br>
-        <label for="sifra">Kreirajte šifru:</label>
-        <input type="password" class="form-control" id="sifra" name="sifra1" required>
+        <label for="pw">Create password:</label>
+        <input type="password" class="form-control" id="pw" name="pw1" required>
         <br>
-        <label for="sifra2">Ponovite šifru:</label>
-        <input type="password" class="form-control" id="sifra2" name="sifra2" required>
-        <br>
-        <span><label for="muskarac"><i class="fas fa-male fa-3x"></i></label></span>
-        <input type="radio" name="pol" id="muskarac">
-        <input type="radio" name="pol" id="zena">
-        <span><label for="zena"><i class="fas fa-female fa-3x"></i></label></span>
+        <label for="pw2">Repeat password:</label>
+        <input type="password" class="form-control" id="pw2" name="pw2" required>
         <br><br>
-        <label for="newsletter">Želim da se prijavim na newsletter&nbsp;</label>
-        <input type="checkbox" name="newsletter" id="newsletter" checked>
+        <label for="newsletter">I want to subscribe to newsletter &nbsp;</label>
+        <input type="checkbox" class="btn" name="newsletter" id="newsletter" checked>
+        <br> <br>
+        <label for="eula">I agree to &nbsp;</label><label><a class="text-primary">terms and conditions</a>&nbsp;</label>
+        <input type="checkbox" class="btn" name="newsletter" id="eula" required>
         <br><br>
-        <button class="btn btn-primary" type="submit">Kreiraj nalog</button>
+        <button class="btn btn-primary" type="submit">Register</button>
         <br>
       </div>
     </form>

@@ -2,7 +2,7 @@
     session_start();
     
     //Connection with database
-    $db=mysqli_connect('localhost','id11968293_scaryfrogg','sifrazadb','id11968293_mrzim_php') or die("Unable to connect to database.");
+    $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Unable to connect to database.");
 
     //favorites
     $favs=array();

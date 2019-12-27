@@ -3,39 +3,33 @@ include_once "functions.php";
 //variable
 $email="";
 
-$errors=array();
-//konekcija na bazu
+//connection to db
 
-$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
+$db=mysqli_connect('localhost','root','','mrzimo_php') or die("Unable to connect to database");
 
-//registracija korisnika
+//registracija usera
 $email = mysqli_real_escape_string($db, $_POST["email"]);
-$sifra1 = mysqli_real_escape_string($db, $_POST["sifra1"]);
-$sifra2 = mysqli_real_escape_string($db, $_POST["sifra2"]);
-
-//form validation
-if(empty($email)){array_push($errors,"Email je obavezan");}
-if(empty($sifra1)){array_push($errors,"Sifra je obavezna");}
-if($sifra1!=$sifra2){array_push($errors,"Sifre moraju da se poklapaju");}
+$pw1 = mysqli_real_escape_string($db, $_POST["pw1"]);
+$pw2 = mysqli_real_escape_string($db, $_POST["pw2"]);
 
 //provera da li email vec postoji
 $email_provera_query="SELECT * FROM users WHERE email ='$email' LIMIT 1";
 $results =mysqli_query($db,$email_provera_query);
-$korisnik = mysqli_fetch_assoc($results);
-if($korisnik){
-    if($korisnik["email"]===$email){array_push($errors,"Postoji korisnik vec registrovan sa tom email adresom");}
-}else{
-    // Registracija korisnika 
-    $password=md5($sifra1);
+$user = mysqli_fetch_assoc($results);
+if($user){
+    if($user["email"]===$email){
+        echo "There is already user using that email address";
+    }else{
+    // Registracija usera 
+    $password=md5($pw1);
     $name=$_POST["name"];
     $last_name=$_POST["last_name"];
-    $dodavanje_korisnika_query="INSERT INTO users (email , password , name , last_name) VALUES ('$email','$password','$name','$last_name');";
-    mysqli_query($db,$dodavanje_korisnika_query);
+    $dodavanje_usera_query="INSERT INTO users (email , password , name , last_name) VALUES ('$email','$password','$name','$last_name');";
+    mysqli_query($db,$dodavanje_usera_query);
     $_SESSION["email"]=$email;
     $_SESSION["success"]="You are logged in";
-    //echo "<br> $dodavanje_korisnika_query";
+    //echo "<br> $dodavanje_usera_query";
     header("Location: ../index.php");   
-
-}//kraj registracije
-
+    }
+}
 

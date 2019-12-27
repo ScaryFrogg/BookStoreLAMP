@@ -1,4 +1,5 @@
 <?php
+
 $db=mysqli_connect('localhost','root','','mrzimo_php') or die("Neuspesna konecija sa bazom");
 
 header('Content-Type: application/json');

@@ -70,7 +70,12 @@ include_once "scripts/functions.php"
           </div>
           </div>';
         }else echo "<h4 class='text-center'>You have nothing in your shopping cart</h4>";
-      }else echo "<h4 class='text-center'>You have to be logged in to use cart</h4>";
+      }else echo '<h4 class="text-center">You have to be logged in to use cart</h4>
+      <br>
+      <a href="./login.php"><button class="btn btn-primary center-block">Log in</button></a>
+      <br>
+      <a  href="./register.php"><button class="btn btn-primary center-block">Register</button></a>
+      <br>';
     ?>
   </div>
 
