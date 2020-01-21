@@ -64,7 +64,11 @@ if (!(isset($_SESSION["admin"]))||$_SESSION["admin"]==0){
   <div>
   </div>
   </div>
-
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+  <script src="scripts/main.js"></script>
   <script src="./scripts/dragAndDrop.js"></script>
+
 </body>
 </html>

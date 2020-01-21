@@ -2,9 +2,9 @@ function addToCart(el) {
     let id = el.getAttribute('data-id');
     let form = new FormData();
     let httpr = new XMLHttpRequest();
-   /*  httpr.onload = function () {
-        alert((this.responseText));
-    } */
+    /*  httpr.onload = function () {
+         alert((this.responseText));
+     } */
 
     form.append("id", id);
     httpr.open("post", `scripts/addToCart.php`);
@@ -16,7 +16,7 @@ function addToFavorites(el) {
     let httpr = new XMLHttpRequest();
     httpr.onload = function () {
         let response = JSON.parse(this.response)
-       // console.log(response)
+        // console.log(response)
         if (!response["logged"]) {
             document.body.innerHTML += `
             <div class="pop-up-wrapper">
@@ -54,21 +54,31 @@ function addToFavorites(el) {
     httpr.open("post", `scripts/addToFavorites.php`);
     httpr.send(form);
 }
-function popUpCancle(){
-    document.querySelector(".pop-up-wrapper").outerHTML=""
+function popUpCancle() {
+    document.querySelector(".pop-up-wrapper").outerHTML = ""
 }
 
- function removeFromCart(el) {
+function removeFromCart(el) {
     let id = el.getAttribute('data-id');
     let form = new FormData();
     let httpr = new XMLHttpRequest();
     httpr.onload = function () {
-        if(this.responseText){
-           alert("removed successfully")
+        if (this.responseText) {
+            alert("removed successfully")
         }
     }
 
     form.append("id", id);
     httpr.open("post", `scripts/removeBook.php`);
     httpr.send(form);
+}
+let profileName = document.querySelector("a[data-name]");
+if (profileName) {
+    console.log(profileName)
+    $.ajax({
+            url: "./scripts/getProfile.php",
+            success: function (result) {
+                profileName.innerHTML+=result;
+            }
+        });
 }

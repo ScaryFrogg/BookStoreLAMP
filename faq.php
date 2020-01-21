@@ -212,7 +212,9 @@ include_once "scripts/functions.php"
   <?php 
     getHtml("footer");
   ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
+      <!-- js -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="scripts/bootstrap.min.js"></script>
+      <script src="scripts/main.js"></script>
   </body>
 </html>

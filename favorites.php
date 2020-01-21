@@ -16,8 +16,7 @@ include_once "scripts/functions.php";
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <!-- css -->
   <link rel="stylesheet" href="./css/style.css">
-  <!-- js -->
-  <script src="./scripts/main.js"></script>
+
 </head>
 <body>
 <!-- Navigation -->
@@ -73,7 +72,9 @@ include_once "scripts/functions.php";
 <?php 
 getHtml("footer");
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="scripts/bootstrap.min.js"></script>
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
