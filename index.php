@@ -23,6 +23,14 @@ $favs = (isset($_SESSION["user_id"])) ? $_SESSION["favs"]:array();
 <!-- Navigation -->
   <?php
     getNavigation();
+    if(!empty($_SESSION['message'])) {
+      $message = $_SESSION['message'];
+      unset($_SESSION['message']);
+      echo '<div class="alert alert-success fade in text-center">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong >'.$message.'!</strong>
+      </div>';
+    }
   ?>
   <!-- Body -->
 
@@ -53,7 +61,7 @@ $favs = (isset($_SESSION["user_id"])) ? $_SESSION["favs"]:array();
               $author=$red["author"];
               $title=$red["title"];
               $img=$red["img_src"];
-              $id=$red['book_id'];
+              $id=$red['id'];
               $farORfas=(in_array($id,$favs))?"fas":"far";
               echo ' <div class="col-md-3">
               <div class="thumbnail">

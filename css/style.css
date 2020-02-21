@@ -180,6 +180,12 @@ form{
     min-height:150px;
     width: 250px;
 }
+.scroll-container{
+    height:70vh !important;
+    overflow-y: scroll;
+    border: 1px solid #e7e7e7;
+}
+
 /* bagovi */
 .thumbnail{
     min-height: 503px;  /* sprecava da neke knjige budu duze od ostalih;  */ 

@@ -10,7 +10,7 @@ if(isset($_SESSION["user_id"])){
     $korisnikId=$_SESSION["user_id"];
     $booksId=$_POST["id"];
 
-    $sql_dodaj="INSERT INTO `favorites`(`book_id`, `user_id`, `quantity`) VALUES ($booksId,$korisnikId,1)";
+    $sql_dodaj="INSERT INTO `favorites`(`book_id`, `user_id`) VALUES ($booksId,$korisnikId)";
     $sql_provera="SELECT `book_id`, `user_id` FROM `favorites` WHERE `book_id`=$booksId AND `user_id`=$korisnikId";
     $sql_ukloni="DELETE FROM `favorites` WHERE `book_id`=$booksId AND `user_id`=$korisnikId";
     $provera=mysqli_fetch_assoc(mysqli_query($db,$sql_provera));

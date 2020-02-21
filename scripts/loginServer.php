@@ -18,13 +18,15 @@ if (isset($_SESSION["email"])){
     $results =mysqli_query($db,$email_provera_query);
     $user = mysqli_fetch_assoc($results);
     if($user){
-        $id =$user["user_id"];
-        $_SESSION["user_id"]=$id;
+        $_SESSION["user_id"]=$user["id"];
         $_SESSION["email"]=$email;
         $_SESSION["admin"]=$user["admin"];
-
+        $_SESSION["first_name"]=$user["first_name"];
+        $_SESSION['message'] ="Welcome ".$user["first_name"];
         header("Location: ../index.php");
     }else{
-        echo "Wrong email and password combination";
+        $_SESSION['message'] = 'Wrong email or password';
+        header("Location: ../login.php");
+
     }
 }

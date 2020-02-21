@@ -38,12 +38,14 @@ include_once "scripts/functions.php";
       if($result->{"num_rows"}!=0){
         while($bookFromList = mysqli_fetch_assoc($result)){
           $bookId=$bookFromList["book_id"];
-          $sql_dohvati_knjigu="SELECT `title`, `author`, `img_src`, `about` FROM `books` WHERE book_id=$bookId;";
+          $sql_dohvati_knjigu="SELECT * FROM `books` WHERE id=$bookId;";
           $book=mysqli_fetch_assoc(mysqli_query($db,$sql_dohvati_knjigu));
           $author=$book["author"];
           $title=$book["title"];
           $imgPath=$book["img_src"];
           $about=$book["about"];
+          $discount = (isset($book["discount"]))? $book["discount"]: 0;
+          $total=$book["price"]-($book["price"]*($discount/100));
           echo '
           <div class="row u-listi">
           <div class="col-md-2">
@@ -53,7 +55,7 @@ include_once "scripts/functions.php";
           <p class="col-md-9">'.$about.'
           <a href="./book.php?id='.$bookId.'">More...</a>
           </p>
-          <p class="col-md-1 text-center">Price $ <br>
+          <p class="col-md-1 text-center">Price '.$total.' <br>
           <i data-id="'.$bookId.'" onclick="addToFavorites(this)" class="fas fa-heart fa-2x" ></i>
           <i data-id="'.$bookId.'" onclick="addToCart(this)" class="fas fa-shopping-cart fa-2x"></i>
           </p>

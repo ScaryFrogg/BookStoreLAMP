@@ -36,9 +36,9 @@ if (!(isset($_SESSION["admin"]))||$_SESSION["admin"]==0){
         </div>
           <div class="text-center">
           <br>
-            <label for="format">Format:</label> <input type="text"name="format"id="format">
-            <label for="brStrana">Broj strana:</label> <input type="text"name="brStrana"id="brStrana">
-            <label for="godIzdanja">Godina izdanja:</label> <input type="text"name="godIzdanja"id="godIzdanja">
+            <label for="format">Format:</label><br> <input type="text"name="format"id="format">
+            <label for="brStrana">Broj strana:</label><br> <input type="text"name="pages"id="brStrana">
+            <label for="godIzdanja">Godina izdanja:</label><br> <input type="text"name="relese"id="godIzdanja">
           </div>
         </div>
         <div class="col-md-7">  
@@ -54,9 +54,9 @@ if (!(isset($_SESSION["admin"]))||$_SESSION["admin"]==0){
         <div class="col-md-2">
           <div class="price">
             <h3>Price: </h3>
-            <input type="number" min=0 name="cena">
+            <input type="number" min=0 name="price">
             <h4>Discount: </h4>
-            <input type="number" min=0 max=100 name="discount">%
+            <input type="number" min=0 value=0 max=100 name="discount">%
           </div>
           <button class="btn btn-success pull-right" style="margin-top:15vh" id="btn_dodajKnjigu">Add Book</button>
         </div>

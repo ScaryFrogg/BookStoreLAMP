@@ -25,6 +25,14 @@ if(isset($_SESSION["email"])) header("Location: index.php");
 <!-- navigation-->
   <?php 
   getNavigation();
+  if(!empty($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    unset($_SESSION['message']);
+    echo '<div class="alert alert-danger fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>'.$message.'!</strong>
+    </div>';
+  }
   ?>
 <!-- telo -->
   <section class="container" style="min-height: 75vh">
@@ -53,7 +61,7 @@ if(isset($_SESSION["email"])) header("Location: index.php");
         <input type="checkbox" class="btn" name="newsletter" id="newsletter" checked>
         <br> <br>
         <label for="eula">I agree to &nbsp;</label><label><a class="text-primary">terms and conditions</a>&nbsp;</label>
-        <input type="checkbox" class="btn" name="newsletter" id="eula" required>
+        <input type="checkbox" class="btn" id="eula" required>
         <br><br>
         <button class="btn btn-primary" type="submit">Register</button>
         <br>

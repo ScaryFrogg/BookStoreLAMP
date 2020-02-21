@@ -28,6 +28,14 @@ include_once "scripts/functions.php"
     <!-- navigacija -->
     <?php 
     getNavigation();
+    if(!empty($_SESSION['message'])) {
+      $message = $_SESSION['message'];
+      unset($_SESSION['message']);
+      echo '<div class="alert alert-danger fade in">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>'.$message.'!</strong>
+      </div>';
+    }
     ?>
     <!-- telo -->
   <section class="container" style="min-height: 75vh">

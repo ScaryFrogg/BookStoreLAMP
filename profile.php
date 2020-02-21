@@ -74,12 +74,15 @@ if(!isset($_SESSION["user_id"])){
       <li class="list-group-item">Frist Name: <?php echo $user["first_name"];?></li> 
       <li class="list-group-item">Last Name: <?php echo $user["last_name"];?></li> 
       <li class="list-group-item">Email: <?php echo $user["email"];?></li> 
-      <li class="list-group-item">Account type: <?php echo $user["email"]===0?"Customer":"Admin";?></li>
+      <li class="list-group-item">Account type: <?php echo $user["admin"]==0?"Customer":"Admin";?></li>
       </ul>
+      Mailing list: 
+      <button class="btn btn-primary" onClick="menageSubscription(this,'<?php echo $user['email'];?>')" type="button"><?php echo (!$user["subscribed"])? "Subscribe" : "Unsubscribe";?></button>
+      <br> <br>
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapseExample">
         Change Password
       </button>
-      <div class="collapse" id="collapse">
+     <div class="collapse" id="collapse">
         <div class="well">
           <form action="./profile.php" method="POST">
           <div class="input-group">

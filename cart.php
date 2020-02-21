@@ -40,21 +40,33 @@ include_once "scripts/functions.php"
         if($result->{"num_rows"}!=0){
           while($bookFromList = mysqli_fetch_assoc($result)){
             $bookId=$bookFromList["book_id"];
-            $sql_get_book="SELECT `title`, `author`, `img_src`, `about` FROM `books` WHERE book_id=$bookId;";
+            $sql_get_book="SELECT * FROM `books` WHERE id=$bookId;";
             $book=mysqli_fetch_assoc(mysqli_query($db,$sql_get_book));
             $author=$book["author"];
             $title=$book["title"];
             $imgPath=$book["img_src"];
             $about=$book["about"];
+            $quantites = mysqli_fetch_assoc(mysqli_query($db,"SELECT `quantites` FROM `shopping_carts` WHERE book_id=$bookId AND `user_id`=$id"))['quantites'];
+            
+            
+            $discount = (isset($book["discount"]))? $book["discount"]: 0;
+            $single = $book["price"]-($book["price"]*($discount/100));
+            $total=$book["price"]*$quantites-($book["price"]*$quantites*($discount/100));
             echo ' <div class="row u-listi">
             <div class="col-md-2">
             <img src="'.$imgPath.'" class="slicica"alt="Putevi svile Piter Frankopan">
             </div>
             <h3>'.$title.' <small>'.$author.'</small> </h3>
             <p class="col-md-9">'.$about.'
-            <a href="./book.php?id='.$bookId.'">Pročitaj više...</a>
+            <a href="./book.php?id='.$bookId.'" data-id='.$bookId.'>Pročitaj više...</a>
             </p>
-            <p class="col-md-1 text-center">1.599 RSD <br>
+            <p class="col-md-1 text-center">
+            Single<span id="single">'.$single.'</span>
+            <br>
+            Qt. <span id="qt">'.$quantites.'</span>
+            <br>
+            Total<span id="price">'.$total.'</span><br>
+
               <i data-id="'.$bookId.'" onclick="removeFromCartAndDelete(this)" class="fas fa-trash-alt fa-2x"></i>
             </p>
             </div>';
@@ -64,7 +76,7 @@ include_once "scripts/functions.php"
           <div class="row">
           <div class="col-md-4 col-md-offset-4">
           <h3 class="text-center total">Total: <span id="total"></span></h3>
-          <button role="button" class="btn btn-primary  center-block">Check out</button>
+          <button role="button" onclick="checkOut()" class="btn btn-primary name="btnCheckOut"  center-block">Check out</button>
           </p>
           </div>
           </div>';

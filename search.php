@@ -39,7 +39,7 @@ $search= (!isset($_GET['search'])||$_GET['search']=="") ? "": mysqli_real_escape
           $author=$row["author"];
           $title=$row["title"];
           $imgPath=$row["img_src"];
-          $id=$row['book_id'];
+          $id=$row['id'];
           $farORfas=(in_array($id,$favs))?"fas":"far";
           echo '
               <div class=" col-lg-3 col-md-3 col-xs-6">
@@ -58,7 +58,7 @@ $search= (!isset($_GET['search'])||$_GET['search']=="") ? "": mysqli_real_escape
               </div>
               ';
         }
-      }else echo "No books were found matching given description, author or title";
+      }else echo "No books were found matching given author, title or genre";
     ?>
     </div>
   <!-- footer -->

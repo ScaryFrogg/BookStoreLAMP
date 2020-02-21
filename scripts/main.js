@@ -32,7 +32,7 @@ function addToFavorites(el) {
 
             <button type="submit" name="btn_login" class="btn btn-primary center-block">Log in</button>
             <button  class="btn btn-primary center-block"><a href="./register.php">Register</a></button>
-            <button onclick="popUpCancle()" class="btn btn-warning center-block">Cancle</button>
+            <button onclick="popUpcancel()" class="btn btn-warning center-block">cancel</button>
 
             </form>
             </div>
@@ -40,7 +40,7 @@ function addToFavorites(el) {
             `
         } else {
             if (response["success"]) {
-                console.log(el)
+                //console.log(el)
                 el.classList.remove("far");
                 el.classList.add("fas");
             } else {
@@ -54,7 +54,7 @@ function addToFavorites(el) {
     httpr.open("post", `scripts/addToFavorites.php`);
     httpr.send(form);
 }
-function popUpCancle() {
+function popUpcancel() {
     document.querySelector(".pop-up-wrapper").outerHTML = ""
 }
 
@@ -74,11 +74,24 @@ function removeFromCart(el) {
 }
 let profileName = document.querySelector("a[data-name]");
 if (profileName) {
-    console.log(profileName)
+    //console.log(profileName)
     $.ajax({
             url: "./scripts/getProfile.php",
             success: function (result) {
                 profileName.innerHTML+=result;
             }
         });
+}
+function menageSubscription(el,email){
+        $.ajax({
+            url: "./scripts/sub.php",
+            method:"POST",
+            data:{
+                "email":email
+            },
+            success: function (result) {
+                el.innerHTML=(el.innerHTML=="Subscribe")?"Unsubscribe":"Subscribe";
+            }
+        });
+    
 }

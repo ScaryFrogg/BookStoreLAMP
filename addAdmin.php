@@ -50,7 +50,7 @@ if ((!isset($_SESSION["email"]))||$_SESSION["admin"]==0)
         foreach($users as $key=>$value){
             if($key=="email"||$key=="name"||$key=="last_name"||$key=="admin"){
                 if($key=="admin")
-                    echo ($value) ? "<td class='text-center' name='type'>Admin</td><td name='button'><button onclick=updateUser(".$users["user_id"].",'downgrade',this) class='btn btn-warning'>Downgrade to Customer</button></td>":"<td class='text-center' name='type'>Customer</td><td name='button'><button onclick=updateUser(".$users["user_id"].",'upgrade',this) class='btn center-block btn-danger'>Upgrade to Admin</button></td>";
+                    echo ($value) ? "<td class='text-center' name='type'>Admin</td><td name='button'><button onclick=updateUser(".$users["id"].",'downgrade',this) class='btn btn-warning'>Downgrade to Customer</button></td>":"<td class='text-center' name='type'>Customer</td><td name='button'><button onclick=updateUser(".$users["id"].",'upgrade',this) class='btn center-block btn-danger'>Upgrade to Admin</button></td>";
                     else
                     echo "<td>$value</td>";
             }

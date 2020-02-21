@@ -1,7 +1,7 @@
 <?php
 include_once "scripts/functions.php";
 $id=$_GET['id'];
-$sql ="SELECT * FROM books WHERE book_id=$id LIMIT 1";
+$sql ="SELECT * FROM books WHERE id=$id LIMIT 1";
 $book=mysqli_fetch_assoc(mysqli_query($db,$sql));
 ?>
 <!DOCTYPE html>
@@ -11,8 +11,8 @@ $book=mysqli_fetch_assoc(mysqli_query($db,$sql));
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bukstor <?php echo $book;?></title>
-
+    <title>Bukstor <?php echo $book["title"];?></title>
+  
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -30,9 +30,12 @@ $book=mysqli_fetch_assoc(mysqli_query($db,$sql));
         <div class="col-md-3">
           <img src="<?php echo $book["img_src"]?>" class="img-responsive center-block" alt="">
           <div class="text-center">
-            <p>Format:</p>
-            <p>Published:</p>
-            <p>ISBN:</p>
+            <br>
+             <?php 
+             if(isset($book["format"]))echo '<p>Format:'.$book["format"].'</p>';
+             if(isset($book["pages"]))echo '<p>Published:'.$book["pages"].'</p>';
+             if(isset($book["relese"]))echo '<p>Published:'.$book["relese"].'</p>';
+             ?>
           </div>
         </div>
         <div class="col-md-7">  
@@ -43,9 +46,18 @@ $book=mysqli_fetch_assoc(mysqli_query($db,$sql));
         </div>
         <div class="col-md-2">
           <div class="price">
-            <h3>Price: </h3>
-            <h4>Discount: </h4>
-            <h3 class="ukupno">Total: </h3>
+            <?php
+            $discount = (isset($book["discount"]))? $book["discount"]: 0;
+            $total=$book["price"]-($book["price"]*($discount/100));
+            echo'<h3>Price:'.$book["price"] .'</h3>';
+            echo'<h4>Discount:'.$book["discount"].'%</h4>';            
+            echo'<h3 class="ukupno">Total:'.$total.'</h3>';
+            
+            ?>
+          </div>
+          <div>
+          <br><br>
+          <a class="btn btn-primary btn-lg" href="checkOut.php?ids=<?php echo $book["id"]?>">Buy book</a>
           </div>
         </div>
       </div>

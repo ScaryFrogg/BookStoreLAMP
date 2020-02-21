@@ -44,4 +44,7 @@
             return true;
         }else return false;
     }
+    function redirectToHome(){
+        header("Location: index.php");
+    }
 ?> 
